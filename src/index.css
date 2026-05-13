@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@plugin "flyonui";
+
+@theme {
+  
+  /* Rose feminin */
+  --color-rose:#C2185B;
+
+  /* Indigo nuit */
+  --color-indigo: #1A237E;
+
+  /* Or africain */
+  --color-or:#F9A825;
+
+  /* Vert nature */
+  --color-vert: #1B5E20;
+
+  /* Rose clair */
+  --color-roseClair: #F8BBD0;
+
+  /* Blanc pur */
+  --color-blanc: #FAFAFA;
+
+
+
+  /* Animation de bande */
+  --animate-scroll-left: scroll-left 30s linear infinite;
+  --animate-scroll-right: scroll-right 30s linear infinite;
+}
+
+
+
+
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  overflow-x: hidden;
+}

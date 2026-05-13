@@ -1,0 +1,121 @@
+/* Cormorant Bold */
+@font-face {
+  font-family: "Cormorant";
+  src: url("./assets/fonts/Cormorant-Bold.woff2") format("woff2"),
+       url("./assets/fonts/Cormorant-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Cormorant Bold Italic */
+@font-face {
+  font-family: "Cormorant";
+  src: url("./assets/fonts/Cormorant-BoldItalic.woff2") format("woff2"),
+       url("./assets/fonts/Cormorant-BoldItalic.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Dancing Script Bold */
+@font-face {
+  font-family: "Dancing Script";
+  src: url("./assets/fonts/DancingScript-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Dancing Script Medium */
+@font-face {
+  font-family: "Dancing Script";
+  src: url("./assets/fonts/DancingScript-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Outfit Light */
+@font-face {
+  font-family: "Outfit";
+  src: url("./assets/fonts/Outfit-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Outfit Regular */
+@font-face {
+  font-family: "Outfit";
+  src: url("./assets/fonts/Outfit-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Cormorant Bold */
+.font-cormorant-bold {
+  font-family: "Cormorant", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Cormorant Bold Italic */
+.font-cormorant-bold-italic {
+  font-family: "Cormorant", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Dancing Script Bold */
+.font-dancing-bold {
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Dancing Script Medium */
+.font-dancing-medium {
+  font-family: "Dancing Script", cursive;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Outfit Light */
+.font-outfit-light {
+  font-family: "Outfit", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Outfit Regular */
+.font-outfit-regular {
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.hero {
+  background: radial-gradient(circle at 50% 50%, #1A237E 0%, #0d1130 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-title {
+  color: #C2185B;
+  text-shadow: 0 0 20px rgba(194, 24, 91, 0.3); /* effet lueur rose */
+
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(1deg); }
+}
+
+/* Pour les cartes sur mobile (éviter le chevauchement) */
+@media (max-width: 768px) {
+  .absolute.position-cards {
+    transform: scale(0.8);
+  }
+}

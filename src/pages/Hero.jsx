@@ -1,0 +1,122 @@
+import React from "react";
+import SynnovaPhoto from "../assets/Synnova.webp";
+
+import { Star, Newspaper, Mic, Film, Share2 } from "lucide-react";
+import Vision from "../components/vision";
+
+export const Hero = () => {
+  return (
+    <>
+      <section className="relative h-[100vh] hero overflow-hidden">
+        {/* Fond Indigo Nuit + Grille */}
+        <div className="absolute inset-0 bg-[#1A237E]">
+          <div
+            className="absolute inset-0 opacity-[0.05]"
+            style={{
+              backgroundImage:
+                "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
+              backgroundSize: "60px 60px",
+            }}
+          ></div>
+        </div>
+
+        {/* Contenu principal */}
+        <div className="relative w-full h-full flex items-center justify-center pt-20">
+          <div className="relative w-full flex items-center justify-center">
+           
+
+            {/* ZONE CENTRALE (IMAGE + TEXTE SYNNOVA) */}
+            <div className="relative top-[-97px] sm:top-[-47px] w-[200px] md:w-[420px] lg:w-[520px] aspect-[4/5] flex items-center justify-center">
+              {/* TEXTE ARRIÈRE */}
+              <h1 className="hero-title absolute inset-0 flex items-center justify-center text-4xl sm:text-[32px] md:text-[96px] lg:text-[128px] uppercase tracking-[0.15em] z-0 font-cormorant-bold-italic text-[rgba(194,24,91,0.15)]">
+                Synnova
+              </h1>
+
+              {/* IMAGE */}
+              <img
+                src={SynnovaPhoto}
+                alt="Portrait Synnova"
+                className="absolute inset-0 w-full h-full object-cover z-10 mix-blend-overlay"
+              />
+
+              {/* CTA SUR IMAGE */}
+              <button className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 w-full md:w-fit px-4 md:px-6 py-2 rounded-full border border-white/40 text-white/80 backdrop-blur-sm bg-[rgba(194,24,91,0.3)] hover:bg-[rgba(194,24,91,0.6)] transition font-outfit-regular text-xs md:text-base">
+                Découvrir mes univers
+              </button>
+
+              {/* TEXTE FRONT (STROKE) */}
+              <h1
+                className="hero-title absolute inset-0 flex items-center justify-center text-transparent text-4xl sm:text-5xl md:text-[96px] lg:text-[128px] uppercase tracking-[0.15em] z-30 font-cormorant-bold-italic"
+                style={{
+                  WebkitTextStroke: "2px rgba(194,24,91,0.8)",
+                }}
+              >
+                Synnova
+              </h1>
+            </div>
+
+            {/* --- CARTES FLOTTANTES (UNIQUEMENT DESKTOP) --- */}
+            <div className="hidden md:block">
+              {/* PERSONAL BRANDING - Haut Gauche */}
+              <div className="absolute top-[20%] left-[10%] z-30 animate-[float_6s_ease-in-out_infinite]">
+                <div className="flex items-center gap-3 px-4 py-3 bg-[rgba(26,35,126,0.7)] backdrop-blur-md border border-[#C2185B] rounded-2xl shadow-xl hover:scale-110 transition-transform cursor-pointer">
+                  <Star className="text-[#C2185B]" size={20} />
+                  <span className="text-white font-medium">
+                    Personal Branding
+                  </span>
+                </div>
+              </div>
+
+              {/* JOURNALISME - Haut Droite */}
+              <div className="absolute top-[20%] right-[10%] z-30 animate-[float_6s_ease-in-out_infinite_1s]">
+                <div className="flex items-center gap-3 px-4 py-3 bg-[rgba(26,35,126,0.7)] backdrop-blur-md border border-[#F9A825] rounded-2xl shadow-xl hover:scale-110 transition-transform cursor-pointer">
+                  <Newspaper className="text-[#F9A825]" size={20} />
+                  <span className="text-white font-medium">Journalisme</span>
+                </div>
+              </div>
+
+              {/* ANIMATION LIVE - Bas Gauche */}
+              <div className="absolute bottom-[25%] left-[10%] z-30 animate-[float_6s_ease-in-out_infinite_2s]">
+                <div className="flex items-center gap-3 px-4 py-3 bg-[rgba(26,35,126,0.7)] backdrop-blur-md border border-[#F8BBD0] rounded-2xl shadow-xl hover:scale-110 transition-transform cursor-pointer">
+                  <Mic className="text-[#F8BBD0]" size={20} />
+                  <span className="text-white font-medium">Animation live</span>
+                </div>
+              </div>
+
+              {/* CINÉMA - Bas Droite */}
+              <div className="absolute bottom-[25%] right-[10%] z-30 animate-[float_6s_ease-in-out_infinite_3s]">
+                <div className="flex items-center gap-3 px-4 py-3 bg-[rgba(26,35,126,0.7)] backdrop-blur-md border border-[#F9A825] rounded-2xl shadow-xl hover:scale-110 transition-transform cursor-pointer">
+                  <Film className="text-[#F9A825]" size={20} />
+                  <span className="text-white font-medium">Cinéma</span>
+                </div>
+              </div>
+
+              {/* COMMUNICATION DIGITALE - Centre Gauche */}
+              <div className="absolute top-[45%] left-[5%] z-30 animate-[float_6s_ease-in-out_infinite_0.5s]">
+                <div className="flex items-center gap-3 px-4 py-3 bg-[rgba(26,35,126,0.7)] backdrop-blur-md border border-[#C2185B] rounded-2xl shadow-xl hover:scale-110 transition-transform cursor-pointer">
+                  <Share2 className="text-[#C2185B]" size={20} />
+                  <span className="text-white font-medium">
+                    Communication digitale
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* CITATION */}
+            <div className="absolute bottom-6 md:bottom-10 right-4 md:right-8 max-w-xs z-30">
+              <p className="flex items-start gap-3">
+                <span className="text-xl md:text-2xl font-dancing-medium text-[rgba(249,168,37,0.5)]">
+                  "Pour un monde positif"
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+            <Vision></Vision>
+      </section>
+    </>
+  );
+};
