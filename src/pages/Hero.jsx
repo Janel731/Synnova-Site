@@ -114,7 +114,7 @@ export const Hero = () => {
         </div>
       </section>
 
-      <section>
+      <section className="hero-section-dark">
             <Vision></Vision>
       </section>
     </>

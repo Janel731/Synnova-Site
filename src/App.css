@@ -114,8 +114,12 @@
 }
 
 /* Pour les cartes sur mobile (éviter le chevauchement) */
-@media (max-width: 768px) {
+@media (max-width: 768px) { 
   .absolute.position-cards {
     transform: scale(0.8);
   }
+}
+
+.hero-section-dark {
+  background: linear-gradient(135deg, #1A237E 0%, #0D1140 50%, #1A237E 100%);
 }

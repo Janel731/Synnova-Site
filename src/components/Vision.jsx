@@ -106,104 +106,84 @@ const Vision = () => {
 
   return (
     <>
-      <section className="py-20 md:py-32 bg-[#FAFAFA] overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <section className="py-20 md:py-32 hero-section-dark overflow-hidden">
+  <div className="max-w-7xl mx-auto px-6 md:px-12">
+    
+    <div className="flex flex-col md:flex-row gap-16 items-center">
+      
+      {/* PARTIE GAUCHE : TEXTE DISPLAY */}
+      <div className="w-full md:w-1/2 order-2 md:order-1">
+        <div className="relative">
+          {/* Éléments décoratifs */}
+          <div className="absolute -top-10 -left-10 w-32 h-32 rounded-full bg-[rgba(194,24,91,0.15)] blur-2xl" />
+          <div className="absolute -bottom-10 -right-10 w-40 h-40 rounded-full bg-[rgba(249,168,37,0.15)] blur-2xl" />
           
-          <div className="flex flex-col md:flex-row gap-16 items-center">
-            
-            {/* PARTIE GAUCHE : TEXTE DISPLAY */}
-            <div className="w-full md:w-1/2 order-2 md:order-1">
-              <div className="relative">
-                {/* Éléments décoratifs */}
-                <div className="absolute -top-10 -left-10 w-32 h-32 rounded-full bg-[rgba(194,24,91,0.05)] blur-2xl" />
-                <div className="absolute -bottom-10 -right-10 w-40 h-40 rounded-full bg-[rgba(249,168,37,0.05)] blur-2xl" />
-                
-                {/* Texte principal */}
-                <h2 className="relative text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-[#1A237E]">
-                  <span className="block text-[#C2185B] mb-2">Je suis une femme</span>
-                  <span className="block text-[#1A237E]">en chemin,</span>
-                  <span className="block text-3xl md:text-4xl lg:text-5xl font-light text-[#1A237E]/70 mt-4">
-                    portée par la création,
-                  </span>
-                  <span className="block text-3xl md:text-4xl lg:text-5xl font-light text-[#1A237E]/70">
-                    la parole et l'engagement.
-                  </span>
-                </h2>
+          {/* Texte principal */}
+          <h2 className="relative text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1]">
+            <span className="block text-[#C2185B] mb-2">Je suis une femme</span>
+            <span className="block text-[#FAFAFA]">en chemin,</span>
+            <span className="block text-3xl md:text-4xl lg:text-5xl font-light text-[#F9A825]/90 mt-4">
+              portée par la création,
+            </span>
+            <span className="block text-3xl md:text-4xl lg:text-5xl font-light text-[#F9A825]/90">
+              la parole et l'engagement.
+            </span>
+          </h2>
 
-                {/* Ligne décorative Or */}
-                <div className="w-20 h-1 bg-[#F9A825] mt-8 rounded-full" />
+          {/* Ligne décorative Rose Clair */}
+          <div className="w-20 h-1 bg-[#F8BBD0] mt-8 rounded-full" />
 
-                {/* Citation complémentaire */}
-                <p className="mt-6 text-lg text-gray-500 font-light italic max-w-md">
-                  "Chaque pas est une histoire, chaque mot une empreinte."
-                </p>
-              </div>
-            </div>
-
-            {/* PARTIE DROITE : 4 CARTES */}
-            <div className="w-full md:w-1/2 order-1 md:order-2">
-              {/* FLEXBOX : 1 colonne sur mobile, 2 colonnes sur desktop */}
-              <div className="flex flex-col md:flex-row md:flex-wrap gap-4 md:gap-6">
-                
-                {cardsData.map((card) => (
-                  <div
-                    key={card.id}
-                    onClick={() => setSelectedCard(card)}
-                    className="w-full md:w-[calc(50%-12px)] group relative bg-[#FAFAFA] border border-gray-200 rounded-2xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
-                    style={{
-                      boxShadow: `0 4px 20px ${card.bgColor}`
-                    }}
-                  >
-                    {/* Effet hover bordure colorée */}
-                    <div 
-                      className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-[#C2185B] transition-colors duration-300 pointer-events-none"
-                    />
-                    
-                    {/* Contenu de la carte */}
-                    <div className="relative flex flex-col items-center gap-4">
-                      {/* Icône */}
-                      <div 
-                        className="w-16 h-16 rounded-full flex items-center justify-center transition-transform group-hover:scale-110"
-                        style={{
-                          backgroundColor: card.bgColor,
-                          color: card.color
-                        }}
-                      >
-                        {card.icon}
-                      </div>
-
-                      {/* Titre */}
-                      <h3 
-                        className="text-center font-bold text-lg text-[#1A237E]"
-                        style={{ color: card.color }}
-                      >
-                        {card.title}
-                      </h3>
-
-                      {/* Flèche d'action */}
-                      <div className="mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <div 
-                          className="w-8 h-8 rounded-full flex items-center justify-center"
-                          style={{ backgroundColor: card.color }}
-                        >
-                          <span className="text-white text-xs">↗</span>
-                        </div>
-                      </div>
-
-                      {/* Indice cliquable */}
-                      <span className="absolute bottom-2 right-2 text-xs text-gray-400 opacity-50">
-                        cliquer
-                      </span>
-                    </div>
-                  </div>
-                ))}
-
-              </div>
-            </div>
-
-          </div>
+          {/* Citation complémentaire */}
+          <p className="mt-6 text-lg text-[#FAFAFA]/60 font-light italic max-w-md">
+            "Chaque pas est une histoire, chaque mot une empreinte."
+          </p>
         </div>
-      </section>
+      </div>
+
+      {/* PARTIE DROITE : 4 CARTES */}
+      <div className="w-full md:w-1/2 order-1 md:order-2">
+        <div className="flex flex-col md:flex-row md:flex-wrap gap-4 md:gap-6">
+          
+          {cardsData.map((card) => (
+            <div
+              key={card.id}
+              onClick={() => setSelectedCard(card)}
+              className="w-full md:w-[calc(50%-12px)] group relative card-dark cursor-pointer transition-all duration-300 hover:-translate-y-2"
+            >
+              {/* Contenu de la carte */}
+              <div className="relative flex flex-col items-center gap-4">
+                {/* Icône */}
+                <div 
+                  className="w-16 h-16 rounded-full flex items-center justify-center transition-transform group-hover:scale-110"
+                  style={{
+                    backgroundColor: card.bgColor,
+                    color: '#F9A825' // Or pour toutes les icônes
+                  }}
+                >
+                  {card.icon}
+                </div>
+
+                {/* Titre */}
+                <h3 className="text-center font-bold text-lg text-[#C2185B]">
+                  {card.title}
+                </h3>
+
+                {/* Flèche d'action */}
+                <div className="mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center bg-[#C2185B]">
+                    <span className="text-white text-xs">↗</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* POPUP */}
       <PopupCard 
