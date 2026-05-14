@@ -123,3 +123,19 @@
 .hero-section-dark {
   background: linear-gradient(135deg, #1A237E 0%, #0D1140 50%, #1A237E 100%);
 }
+
+
+
+
+*/
+.media-layer {
+  transform-origin: top left !important;
+  transition: none;
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+  .media-layer {
+    width: 180px !important;
+  }
+}

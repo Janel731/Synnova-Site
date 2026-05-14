@@ -3,7 +3,7 @@ import SynnovaPhoto from "../assets/Synnova.webp";
 
 import { Star, Newspaper, Mic, Film, Share2 } from "lucide-react";
 import Vision from "../components/vision";
-
+import Storyboard from "../components/Storyboard";
 export const Hero = () => {
   return (
     <>
@@ -116,6 +116,10 @@ export const Hero = () => {
 
       <section className="hero-section-dark">
             <Vision></Vision>
+      </section>
+
+      <section>
+         <Storyboard></Storyboard>
       </section>
     </>
   );
