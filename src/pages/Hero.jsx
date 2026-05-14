@@ -1,12 +1,55 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import SynnovaPhoto from "../assets/Synnova.webp";
 
 import { Star, Newspaper, Mic, Film, Share2 } from "lucide-react";
 import Vision from "../components/vision";
 import Storyboard from "../components/Storyboard";
+import HorizontalGallery from "../components/HorizontalGallery";
+import FloatingSocials from "../components/FloatingSocials";
+
 export const Hero = () => {
   return (
+    
     <>
+        
+         <Helmet>
+      <title>Synnova Tocloe | Animatrice, Communicatrice & Actrice au Bénin</title>
+
+      <meta
+        name="description"
+        content="Découvrez Synnova Tocloe, animatrice, communicatrice, actrice et entrepreneuse sociale béninoise engagée entre Grand-Popo, le cinéma et la communication digitale."
+      />
+
+      <meta
+        name="keywords"
+        content="Synnova Tocloe, Synnova Belvine Kybarance TOCLOE, animatrice Bénin, communicatrice Grand-Popo, actrice béninoise, entrepreneuse sociale Bénin"
+      />
+
+      <meta name="robots" content="index, follow" />
+      <meta name="language" content="fr" />
+
+      {/* Open Graph */}
+      <meta property="og:title" content="Synnova Tocloe | Univers & Identité" />
+      <meta
+        property="og:description"
+        content="Animatrice, communicatrice, actrice et entrepreneuse sociale au Bénin."
+      />
+      <meta property="og:image" content="/og/home.jpg" />
+      <meta property="og:type" content="website" />
+
+      {/* Twitter */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Synnova Tocloe" />
+      <meta
+        name="twitter:description"
+        content="Animatrice, communicatrice et actrice béninoise engagée."
+      />
+      <meta name="twitter:image" content="/og/home.jpg" />
+
+      <link rel="canonical" href="https://ton-site.com/" />
+    </Helmet>
+
       <section className="relative h-[100vh] hero overflow-hidden">
         {/* Fond Indigo Nuit + Grille */}
         <div className="absolute inset-0 bg-[#1A237E]">
@@ -120,6 +163,14 @@ export const Hero = () => {
 
       <section>
          <Storyboard></Storyboard>
+      </section>
+
+      <section>
+                <HorizontalGallery></HorizontalGallery>
+      </section>
+
+      <section>
+                <FloatingSocials></FloatingSocials>
       </section>
     </>
   );

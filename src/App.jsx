@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import { Hero } from "./pages/Hero";
 import "./App.css";
+import Footer from "./components/Footer";
 
 function App() {
   const location = useLocation();
@@ -18,6 +19,8 @@ function App() {
           </Routes>
         </div>
       </main>
+
+      <Footer></Footer>
     </>
   );
 }
