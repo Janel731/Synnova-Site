@@ -34,7 +34,7 @@ const FloatingSocials = () => {
   ];
 
   return (
-    <section className="hero-section-dark py-20 md:py-32 overflow-hidden relative">
+    <section className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] py-20 md:py-32 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         <div className="text-center mb-16 relative z-10">

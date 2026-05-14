@@ -140,3 +140,20 @@
   }
 }
 
+/* Clip-path pour la séparation diagonale */
+.clip-path-diagonal-left {
+  clip-path: polygon(0 0, 60% 0, 40% 100%, 0 100%);
+}
+
+.clip-path-diagonal-right {
+  clip-path: polygon(40% 0, 100% 0, 100% 100%, 60% 100%);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .clip-path-diagonal-left,
+  .clip-path-diagonal-right {
+    clip-path: polygon(0 0, 100% 0, 100% 30%, 0 100%);
+  }
+}
+

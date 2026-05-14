@@ -21,13 +21,13 @@ export default function Navbar() {
   <header
   className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b ${
     scrolled
-      ? "bg-[rgba(26,35,126,0.95)] backdrop-blur-md shadow-lg border-[rgba(249,168,37,0.3)]"
-      : "bg-[rgba(26,35,126,0.5)] backdrop-blur-md border-[rgba(249,168,37,0.1)]"
+      ? "bg-neutral-950/50 backdrop-blur-md shadow-lg border-[rgba(249,168,37,0.3)]"
+      : "bg-neutral-950/90 backdrop-blur-md border-[rgba(249,168,37,0.1)]"
   }`}
 >
       <div className="flex items-center justify-between px-6 py-4 md:px-12">
         {/* Logo */}
-        <div className="text-black font-bold text-xl">Synnova</div>
+        <div className="text-black font-bold text-xl text-or/90">Synnova</div>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex gap-8 text-black">
@@ -38,7 +38,7 @@ export default function Navbar() {
               className={`transition ${
                 item.cta
                   ? "bg-pink-600 text-white px-4 py-2 rounded-full hover:bg-pink-700 hover:rotate-[-10deg]"
-                  : "text-black hover:text-pink-600 hover:rotate-6"
+                  : "text-white hover:text-pink-600 hover:rotate-6"
               }`}
             >
               {item.label}

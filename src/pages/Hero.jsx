@@ -9,6 +9,7 @@ import Storyboard from "../components/Storyboard";
 import HorizontalGallery from "../components/HorizontalGallery";
 import FloatingSocials from "../components/FloatingSocials";
 import transition from "../transition";
+import { LetterPullButton } from "@/components/ui/letter-pull-button"
 
 function Hero  (){
   return (
@@ -57,9 +58,9 @@ function Hero  (){
 
       <section className="relative h-[100vh] hero overflow-hidden">
         {/* Fond Indigo Nuit + Grille */}
-        <div className="absolute inset-0 bg-[#1A237E]">
+        <div className="absolute z-0 inset-0 bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
           <div
-            className="absolute inset-0 opacity-[0.05]"
+            className="absolute inset-0 z-0 opacity-[0.05]"
             style={{
               backgroundImage:
                 "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
@@ -86,9 +87,8 @@ function Hero  (){
               />
 
               {/* CTA SUR IMAGE */}
-              <button className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 w-full md:w-fit px-4 md:px-6 py-2 rounded-full border border-white/40 text-white/80 backdrop-blur-sm bg-[rgba(194,24,91,0.3)] hover:bg-[rgba(194,24,91,0.6)] transition font-outfit-regular text-xs md:text-base">
-                Découvrir mes univers
-              </button>
+
+              <LetterPullButton className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 w-full md:w-fit px-4 md:px-6 py-2 rounded-full border border-white/40 text-white/80 backdrop-blur-sm bg-[rgba(194,24,91,0.3)] hover:bg-[rgba(194,24,91,0.6)] transition font-outfit-regular text-xs md:text-base z-40" text="Découvrir mes univers" variant="wave" />
 
               {/* TEXTE FRONT (STROKE) */}
               <h1
