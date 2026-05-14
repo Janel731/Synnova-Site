@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
+
 import SynnovaPhoto from "../assets/Synnova.webp";
 
 import { Star, Newspaper, Mic, Film, Share2 } from "lucide-react";
@@ -7,48 +8,52 @@ import Vision from "../components/vision";
 import Storyboard from "../components/Storyboard";
 import HorizontalGallery from "../components/HorizontalGallery";
 import FloatingSocials from "../components/FloatingSocials";
+import transition from "../transition";
 
-export const Hero = () => {
+function Hero  (){
   return (
-    
     <>
-        
-         <Helmet>
-      <title>Synnova Tocloe | Animatrice, Communicatrice & Actrice au Bénin</title>
+      <Helmet>
+        <title>
+          Synnova Tocloe | Animatrice, Communicatrice & Actrice au Bénin
+        </title>
 
-      <meta
-        name="description"
-        content="Découvrez Synnova Tocloe, animatrice, communicatrice, actrice et entrepreneuse sociale béninoise engagée entre Grand-Popo, le cinéma et la communication digitale."
-      />
+        <meta
+          name="description"
+          content="Découvrez Synnova Tocloe, animatrice, communicatrice, actrice et entrepreneuse sociale béninoise engagée entre Grand-Popo, le cinéma et la communication digitale."
+        />
 
-      <meta
-        name="keywords"
-        content="Synnova Tocloe, Synnova Belvine Kybarance TOCLOE, animatrice Bénin, communicatrice Grand-Popo, actrice béninoise, entrepreneuse sociale Bénin"
-      />
+        <meta
+          name="keywords"
+          content="Synnova Tocloe, Synnova Belvine Kybarance TOCLOE, animatrice Bénin, communicatrice Grand-Popo, actrice béninoise, entrepreneuse sociale Bénin"
+        />
 
-      <meta name="robots" content="index, follow" />
-      <meta name="language" content="fr" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="fr" />
 
-      {/* Open Graph */}
-      <meta property="og:title" content="Synnova Tocloe | Univers & Identité" />
-      <meta
-        property="og:description"
-        content="Animatrice, communicatrice, actrice et entrepreneuse sociale au Bénin."
-      />
-      <meta property="og:image" content="/og/home.jpg" />
-      <meta property="og:type" content="website" />
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="Synnova Tocloe | Univers & Identité"
+        />
+        <meta
+          property="og:description"
+          content="Animatrice, communicatrice, actrice et entrepreneuse sociale au Bénin."
+        />
+        <meta property="og:image" content="/og/home.jpg" />
+        <meta property="og:type" content="website" />
 
-      {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Synnova Tocloe" />
-      <meta
-        name="twitter:description"
-        content="Animatrice, communicatrice et actrice béninoise engagée."
-      />
-      <meta name="twitter:image" content="/og/home.jpg" />
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Synnova Tocloe" />
+        <meta
+          name="twitter:description"
+          content="Animatrice, communicatrice et actrice béninoise engagée."
+        />
+        <meta name="twitter:image" content="/og/home.jpg" />
 
-      <link rel="canonical" href="https://ton-site.com/" />
-    </Helmet>
+        <link rel="canonical" href="https://ton-site.com/" />
+      </Helmet>
 
       <section className="relative h-[100vh] hero overflow-hidden">
         {/* Fond Indigo Nuit + Grille */}
@@ -66,8 +71,6 @@ export const Hero = () => {
         {/* Contenu principal */}
         <div className="relative w-full h-full flex items-center justify-center pt-20">
           <div className="relative w-full flex items-center justify-center">
-           
-
             {/* ZONE CENTRALE (IMAGE + TEXTE SYNNOVA) */}
             <div className="relative top-[-97px] sm:top-[-47px] w-[200px] md:w-[420px] lg:w-[520px] aspect-[4/5] flex items-center justify-center">
               {/* TEXTE ARRIÈRE */}
@@ -158,20 +161,23 @@ export const Hero = () => {
       </section>
 
       <section className="hero-section-dark">
-            <Vision></Vision>
+        <Vision></Vision>
       </section>
 
       <section>
-         <Storyboard></Storyboard>
+        <Storyboard></Storyboard>
       </section>
 
       <section>
-                <HorizontalGallery></HorizontalGallery>
+        <HorizontalGallery></HorizontalGallery>
       </section>
 
       <section>
-                <FloatingSocials></FloatingSocials>
+        <FloatingSocials></FloatingSocials>
       </section>
     </>
   );
 };
+
+export default transition(Hero);
+
