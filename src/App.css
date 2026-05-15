@@ -54,6 +54,15 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Outfit";
+  src: url("./assets/fonts/Outfit-Bold.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 /* Cormorant Bold */
 .font-cormorant-bold {
   font-family: "Cormorant", serif;
@@ -82,6 +91,12 @@
   font-style: normal;
 }
 
+.font-dancing-italic {
+  font-family: "Dancing Script", cursive;
+  font-weight: 400;
+  font-style: italic;
+}
+
 /* Outfit Light */
 .font-outfit-light {
   font-family: "Outfit", sans-serif;
@@ -95,6 +110,19 @@
   font-weight: 400;
   font-style: normal;
 }
+
+.font-outfit-italic {
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.font-outfit-bold {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
 
 .hero {
   background: radial-gradient(circle at 50% 50%, #1A237E 0%, #0d1130 100%);

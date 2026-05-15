@@ -64,24 +64,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Colonne 2 : Navigation rapide */}
-          <div className="space-y-4">
-            <h4 className="text-[#F9A825] font-bold text-lg uppercase tracking-wider">
-              Navigation
-            </h4>
-            <ul className="space-y-2">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <a 
-                    href={link.link}
-                    className="text-[#FAFAFA]/70 hover:text-[#C2185B] transition-colors duration-300 text-sm"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+         
 
           {/* Colonne 3 : Contact */}
           <div className="space-y-4">
@@ -111,16 +94,7 @@ const Footer = () => {
             <p className="text-[#FAFAFA]/70 text-sm">
               Rejoignez ma communauté pour ne rien manquer de mes projets et événements.
             </p>
-            <div className="flex mt-2">
-              <input 
-                type="email" 
-                placeholder="Votre email"
-                className="flex-1 px-4 py-2 bg-[rgba(13,17,64,0.6)] border border-[rgba(249,168,37,0.2)] rounded-l-lg text-white placeholder:text-white/30 focus:outline-none focus:border-[#C2185B] transition-colors"
-              />
-              <button className="px-4 py-2 bg-[#C2185B] text-white rounded-r-lg hover:bg-[#F8BBD0] hover:text-[#1A237E] transition-all font-bold">
-                OK
-              </button>
-            </div>
+           
           </div>
 
         </div>

@@ -6,35 +6,36 @@ import formation from "../assets/formation.webp";
 import engagement from "../assets/engagement.webp";
 import cinema from "../assets/cinema.webp";
 import entrepreneuriat from "../assets/entrepreneuriat.webp";
+import { FlipWords } from "@/components/ui/flip-words"
 const features = [
     {
-        title: "Real-time Collaboration",
-        description: "Work together with your team in real-time with zero latency. Built-in versioning and conflict resolution come standard.",
-        icon: "solar:users-group-rounded-bold-duotone",
+        title:"Formation — Journalisme & Communication",
+        description: "Formée en journalisme et en communication, j’ai construit mes bases autour de la parole, de l’écoute et de la transmission. Très tôt, j’ai compris que communiquer ne se limitait pas à parler, mais à créer du lien, à donner du sens et à porter des messages capables d’inspirer. Mon parcours à l’UCAE et dans des environnements culturels m’a permis de développer une aisance à l’oral, une sensibilité pour les médias et une passion pour la narration sous toutes ses formes.",
+        icon: "solar:book-bookmark-bold-duotone",
         image: formation,
         color: "from-blue-500 to-cyan-500"
     },
     {
-        title: "Automated Workflows",
-        description: "Set up complex pipelines with our intuitive drag-and-drop editor. Automate repetitive tasks and focus on building.",
-        icon: "solar:settings-minimalistic-bold-duotone",
+        title: "Engagement social — Jeunesse & Société civile",
+        description: "Mon engagement social est né d’une volonté simple : être utile à ma communauté. À travers mon rôle au sein de U-Report Grand-Popo et mes différentes expériences dans la société civile, j’ai appris à écouter les réalités, à relayer les voix de la jeunesse et à participer à des actions de sensibilisation. Pour moi, informer, c’est déjà agir. Et chaque initiative dans laquelle je m’investis est une manière de contribuer, à mon échelle, à un changement positif et durable.",
+        icon: "solar:users-group-rounded-bold-duotone",
         image: engagement,
         color: "from-purple-500 to-pink-500"
     },
     {
-        title: "Global Edge Network",
-        description: "Deploy your applications to over 100 edge locations worldwide for lightning-fast performance everywhere.",
-        icon: "solar:globus-bold-duotone",
+        title: "Cinéma & Événements — Scène, caméra & émotions",
+        description: "Entre scène, caméra et coulisses, j’évolue dans un univers où chaque instant devient expression. En tant qu’animatrice live, actrice et régisseuse plateau, j’ai participé à des événements culturels et artistiques, notamment le Festival International des Arts du Bénin. Ces expériences m’ont appris à gérer l’énergie d’un public, à raconter des histoires par la présence et à transformer chaque événement en moment vivant, authentique et mémorable",
+        icon: "solar:clapperboard-bold-duotone",
         image: cinema,
         color: "from-amber-500 to-orange-500"
     },
 
      {
-        title: "Global  Network",
-        description: "Deploy your applications to over 100 edge locations worldwide for lightning-fast performance everywhere.",
-        icon: "solar:globus-bold-duotone",
-        image: cinema,
-        color: "from-amber-500 to-orange-500"
+        title: "Entrepreneuriat éco — Créer avec conscience",
+        description: "À travers mon activité de création d’emballages biodégradables, j’ai choisi de mettre mon énergie au service d’un enjeu qui me tient à cœur : l’environnement. Cet engagement entrepreneurial est pour moi une continuité naturelle de mes valeurs. Je cherche à proposer des solutions concrètes, accessibles et responsables, tout en sensibilisant à une consommation plus respectueuse de notre planète. Créer, pour moi, c’est aussi protéger et penser au futur.",
+        icon: "solar:leaf-bold-duotone",
+        image: entrepreneuriat,
+        color: "from-lime-400 to-emerald-500"
     }
 ]
 
@@ -43,13 +44,14 @@ export function FeatureModern() {
         <section className="relative bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] pt-24">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="mb-24 space-y-4 max-w-2xl">
-                    <h2 className="text-4xl md:text-6xl font-black tracking-tighter italic">Deep Dive into Power.</h2>
-                    <p className="text-muted-foreground text-lg leading-relaxed">
-                        Experience a new standard of development with tools designed for high-performance teams.
+                    <h2 className="text-4xl md:text-6xl  tracking-tighter font-outfit-italic"></h2>
+                    <FlipWords className="text-4xl md:text-6xl font-outfit-italic text-roseClair" words={["Créer", "Inspirer", "Impacter"]} />
+                    <p className="text-muted-foreground text-white/50 text-lg leading-relaxed font-outfit-regular">
+                        Entre création, engagement et expression, Synnova transforme chaque projet en une expérience qui connecte et inspire positivement.
                     </p>
                 </div>
 
-                <div className="space-y-40 pb-40">
+                <div className="space-y-40 pb-20">
                     {features.map((feature, index) => (
                         <FeatureItem key={feature.title} feature={feature} index={index} />
                     ))}
@@ -106,16 +108,11 @@ function FeatureItem({
                     )}>
                     <Icon icon={feature.icon} className="text-3xl" />
                 </div>
-                <h3 className="text-3xl md:text-5xl font-black tracking-tight">{feature.title}</h3>
-                <p className="text-lg text-muted-foreground leading-relaxed max-w-md">
+                <h3 className="text-3xl md:text-5xl text-white tracking-tight font-outfit-regular">{feature.title}</h3>
+                <p className="text-lg  text-[#fafafa]/70 text-muted-foreground leading-relaxed font-outfit-regular">
                     {feature.description}
                 </p>
-                <button className="flex items-center gap-2 font-bold text-primary group">
-                    Learn more
-                    <Icon
-                        icon="solar:arrow-right-bold"
-                        className="transition-transform group-hover:translate-x-1" />
-                </button>
+               
             </motion.div>
         </div>
     );

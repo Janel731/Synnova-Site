@@ -8,7 +8,7 @@ export const Nav = [
   {
     id: 2,
     label: "Mes univers",
-    lien: "#",
+    lien: "/univers",
   },
 
   {
