@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { X, Play, Star, Mic, Globe } from "lucide-react";
+import { motion } from "framer-motion";
 
 // Composant Popup (sans image)
 const PopupCard = ({ isOpen, onClose, title, description, color, icon }) => {
@@ -113,14 +114,20 @@ const Vision = () => {
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="flex flex-col md:flex-row gap-16 items-center">
             {/* PARTIE GAUCHE : TEXTE DISPLAY */}
-            <div className="w-full md:w-1/2 order-2 md:order-1">
+            <motion.div
+              initial={{ opacity: 0, y: 80 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="w-full md:w-1/2 order-2 md:order-1"
+            >
               <div className="relative">
                 {/* Éléments décoratifs */}
                 <div className="absolute -top-10 -left-10 w-32 h-32 rounded-full bg-[rgba(194,24,91,0.15)] blur-2xl" />
                 <div className="absolute -bottom-10 -right-10 w-40 h-40 rounded-full bg-[rgba(249,168,37,0.15)] blur-2xl" />
 
                 {/* Texte principal */}
-                <h2 className="relative text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1]">
+                <h2 className="relative text-4xl md:text-5xl lg:text-6xl font-dancing-bold leading-[1.1]">
                   <span className="block text-[#C2185B] mb-2">
                     Je suis une femme
                   </span>
@@ -137,17 +144,21 @@ const Vision = () => {
                 <div className="w-20 h-1 bg-[#F8BBD0] mt-8 rounded-full" />
 
                 {/* Citation complémentaire */}
-                <p className="mt-6 text-lg text-[#FAFAFA]/60 font-light italic max-w-md">
-                  "Chaque pas est une histoire, chaque mot une empreinte."
+                <p className="mt-6 text-lg text-[#FAFAFA]/60 font-outfit-regular max-w-md">
+                  "chaque pas est une histoire, chaque mot une empreinte."
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* PARTIE DROITE : 4 CARTES */}
             <div className="w-full md:w-1/2 order-1 md:order-2">
               <div className="flex flex-col md:flex-row md:flex-wrap gap-4 md:gap-6">
                 {cardsData.map((card) => (
-                  <div
+                  <motion.div
+                    initial={{ opacity: 0, y: 80 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
                     key={card.id}
                     onClick={() => setSelectedCard(card)}
                     className="w-full md:w-[calc(50%-12px)] group relative card-dark cursor-pointer transition-all duration-300 hover:-translate-y-2"
@@ -166,7 +177,7 @@ const Vision = () => {
                       </div>
 
                       {/* Titre */}
-                      <h3 className="text-center font-bold text-lg text-[#C2185B]">
+                      <h3 className="text-center font-outfit-italic text-lg text-[#C2185B]">
                         {card.title}
                       </h3>
 
@@ -177,7 +188,7 @@ const Vision = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>

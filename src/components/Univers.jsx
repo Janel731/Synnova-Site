@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-export default function Univers({ data = [] }) {
+ function Univers({ data = [] }) {
   const [progress, setProgress] = useState(0);
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [showContent, setShowContent] = useState(false);
@@ -192,3 +192,5 @@ export default function Univers({ data = [] }) {
     </section>
   );
 }
+
+export default transition(Univers)

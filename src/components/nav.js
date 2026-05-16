@@ -1,26 +1,32 @@
 export const Nav = [
   {
     id: 1,
+    label: "Accueil",
+    lien: "/",
+  },
+  
+  {
+    id: 2,
     label: "Story",
     lien: "/about",
   },
 
   {
-    id: 2,
+    id: 3,
     label: "Mes univers",
     lien: "/univers",
   },
 
   {
-    id: 3,
+    id: 4,
     label: "Portfolio",
     lien: "/PortfolioPage",
   },
 
   {
-    id: 4,
+    id: 5,
     label: "Me contacter",
-    lien: "#",
+    lien: "/ContactPage",
     cta:true,
   },
 ];

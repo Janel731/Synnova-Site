@@ -17,8 +17,9 @@ const transition = (OgComponent) => {
           style={{
             transformOrigin: "top",
           }}
-          className="fixed inset-0 bg-[#1A237E] z-[9999]"
-        />
+          className="fixed inset-0 bg-[#1A237E] z-[9999]">
+            
+        </motion.div>
       </>
     );
   };

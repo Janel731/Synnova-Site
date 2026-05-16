@@ -2,7 +2,7 @@
 import { Helmet } from "react-helmet-async";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-
+import transition from "../transition"
 /* -------------------------------------------------------------------------- */
 /*                                UNIVERS DATA                                */
 /* -------------------------------------------------------------------------- */
@@ -118,8 +118,7 @@ Un parcours entre création, engagement et impact.
 /* -------------------------------------------------------------------------- */
 /*                                COMPONENT                                   */
 /* -------------------------------------------------------------------------- */
-
-export default function UniversPage() {
+ function UniversPage() {
   const [active, setActive] = useState(null);
   const [transition, setTransition] = useState(null);
   const [lock, setLock] = useState(false);
@@ -361,3 +360,5 @@ Explore un voyage immersif à travers les univers créatifs de Synnova : événe
     </>
   );
 }
+
+export default transition(UniversPage)

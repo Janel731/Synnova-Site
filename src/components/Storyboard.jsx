@@ -16,7 +16,7 @@ const Storyboard = () => {
   const statsData = [
     { number: '+3', label: 'Années d\'engagement' },
     { number: '4', label: 'Univers créatifs' },
-    { number: 'Plusieurs', label: 'Événements culturels & artistiques' },
+    { number: '+5', label: 'Événements culturels & artistiques' },
     { number: '1', label: 'Communauté — Un engagement local fort' }
   ];
 
@@ -142,13 +142,13 @@ const Storyboard = () => {
             <span className="text-[#C2185B]">TOCLOE</span>
           </h1>
 
-          <div className="stats-grid grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+          <div className="stats-grid grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 font-dancing-italic">
             {statsData.map((stat, index) => (
               <div key={index} className="stat-item text-center flex flex-col items-center">
                 <span className="text-5xl md:text-7xl font-bold text-[#F9A825]">
                   {stat.number}
                 </span>
-                <p className="text-white/80 text-sm md:text-base mt-2 max-w-[200px]">
+                <p className="text-white/80 text-xl  mt-2 max-w-[200px]">
                   {stat.label}
                 </p>
               </div>

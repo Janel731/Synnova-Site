@@ -27,18 +27,18 @@ export default function Navbar() {
 >
       <div className="flex items-center justify-between px-6 py-4 md:px-12">
         {/* Logo */}
-        <div className="text-black font-bold text-xl text-or/90">Synnova</div>
+        <div className="text-black font-bold text-3xl text-or/90 font-dancing-bold">Synnova<span className="text-indigo text-5xl">.</span></div>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex gap-8 text-black">
+        <nav className="hidden md:flex gap-8">
           {Nav.map((item) => (
             <Link
               key={item.id}
               to={item.lien}
               className={`transition ${
                 item.cta
-                  ? "bg-pink-600 text-white px-4 py-2 rounded-full hover:bg-pink-700 hover:rotate-[-10deg]"
-                  : "text-white hover:text-pink-600 hover:rotate-6"
+                  ? "bg-pink-600 text-white px-4 py-2 rounded-full hover:bg-pink-700 hover:rotate-[-10deg] font-outfit-italic"
+                  : "text-white hover:text-pink-600 hover:rotate-6 font-outfit-italic"
               }`}
             >
               {item.label}
@@ -47,8 +47,8 @@ export default function Navbar() {
         </nav>
 
         {/* Mobile button */}
-        <button className="md:hidden text-black" onClick={() => setOpen(!open)}>
-          {open ? <X size={28} /> : <Menu size={28} />}
+        <button className="md:hidden" onClick={() => setOpen(!open)}>
+          {open ? <X size={28} /> : <Menu className="text-white" size={28} />}
         </button>
       </div>
 
@@ -60,7 +60,7 @@ export default function Navbar() {
             animate={{ height: "100vh", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="md:hidden bg-white text-black flex flex-col items-center justify-center gap-8 overflow-hidden"
+            className="md:hidden bg-neutral-900/10 text-white flex flex-col items-center justify-center gap-8 overflow-hidden font-outfit-italic"
           >
             {Nav.map((item) => (
               <motion.div
@@ -75,7 +75,7 @@ export default function Navbar() {
                   className={`transition ${
                     item.cta
                       ? "bg-pink-600 text-white px-4 py-2 rounded-full hover:bg-pink-700"
-                      : "text-black hover:text-pink-600"
+                      : "text-white hover:text-pink-600"
                   }`}
                 >
                   {item.label}

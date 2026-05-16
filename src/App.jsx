@@ -7,6 +7,8 @@ import Footer from "./components/Footer";
 import { AnimatePresence } from "framer-motion";
 import Univers from "./pages/UniversPage";
 import PortfolioPage from "./pages/PortfolioPage";
+import ContactPage from "./pages/ContactPage";
+
 function App() {
   const location = useLocation();
 
@@ -21,6 +23,7 @@ function App() {
             <Route path="/about" element={<About />} />
              <Route path="/univers" element={<Univers />} />
               <Route path="/PortfolioPage" element={<PortfolioPage />} />
+               <Route path="/ContactPage" element={<ContactPage />} />
           </Routes>
         </div>
       </main>

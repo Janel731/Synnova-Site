@@ -26,7 +26,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] border-t border-[rgba(249,168,37,0.15)] py-16 md:py-24 overflow-hidden relative">
+    <footer className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] border-t border-[rgba(249,168,37,0.15)] py-16 md:py-24 overflow-hidden relative font-outfit-bold">
       
       {/* Éléments décoratifs */}
       <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-[rgba(194,24,91,0.05)] blur-3xl" />
