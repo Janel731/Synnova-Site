@@ -14,7 +14,7 @@ export const Nav = [
   {
     id: 3,
     label: "Portfolio",
-    lien: "#",
+    lien: "/PortfolioPage",
   },
 
   {
