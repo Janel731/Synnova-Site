@@ -23,6 +23,8 @@ import slide1 from "../assets/slide1.webp";
 import BBq from "../assets/BBq.webp";
 import { TestimonialsSection } from "@/components/testimonials-section";
 import { BlurFade } from "@/components/ui/blur-fade";
+import { Helmet } from "react-helmet-async";
+
 /* -------------------------------------------------------------------------- */
 /*                                  DATA                                      */
 /* -------------------------------------------------------------------------- */
@@ -133,6 +135,64 @@ function PortfolioPage() {
       : projects.filter((p) => p.category === activeCat);
 
   return (
+
+    <>
+
+    <Helmet>
+  {/* ================= TITLE ================= */}
+  <title>
+    Portfolio & Galerie | Synnova — Projets, Cinéma, Événements & Créations
+  </title>
+
+  {/* ================= META DESCRIPTION ================= */}
+  <meta
+    name="description"
+    content="
+Découvrez le portfolio de Synnova : événements culturels, projets cinéma, communication digitale, entrepreneuriat social et créations visuelles.
+Une galerie immersive de réalisations concrètes et d’expériences impactantes.
+"
+  />
+
+  {/* ================= KEYWORDS ================= */}
+  <meta
+    name="keywords"
+    content="
+portfolio Synnova, galerie créative, événements Bénin, cinéma Afrique, communication digitale, création de contenu, régie plateau, projets artistiques, entrepreneuriat social, storytelling visuel
+"
+  />
+
+  {/* ================= AUTHOR ================= */}
+  <meta name="author" content="Synnova" />
+
+  {/* ================= OPEN GRAPH ================= */}
+  <meta property="og:title" content="Portfolio & Galerie | Synnova" />
+  <meta
+    property="og:description"
+    content="
+Explore les réalisations de Synnova : événements, cinéma, communication digitale et projets à impact social.
+"
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/og-portfolio.webp" />
+  <meta property="og:url" content="https://ton-site.com/portfolio" />
+
+  {/* ================= TWITTER ================= */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Portfolio & Galerie | Synnova" />
+  <meta
+    name="twitter:description"
+    content="Une galerie immersive de projets créatifs et professionnels."
+  />
+  <meta name="twitter:image" content="/assets/og-portfolio.webp" />
+
+  {/* ================= TECH ================= */}
+  <meta name="theme-color" content="#070A12" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  {/* ================= CANONICAL ================= */}
+  <link rel="canonical" href="https://ton-site.com/portfolio" />
+</Helmet>
+
     <main className="bg-[#070A12] text-white min-h-screen">
       {/* ================= HERO ================= */}
       <section className="min-h-[60vh] flex flex-col items-center justify-center text-center px-6">
@@ -229,6 +289,8 @@ function PortfolioPage() {
         <TestimonialsSection></TestimonialsSection>
       </section>
     </main>
+
+    </>
   );
 }
 

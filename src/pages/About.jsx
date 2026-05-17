@@ -7,6 +7,8 @@ import { Icon } from "@iconify/react";
 import { MagneticText } from "@/components/ui/magnetic-text";
 import { GooeyButton } from "@/components/ui/gooey-button";
 import { BlurFade } from "@/components/ui/blur-fade";
+import { Link } from "react-router-dom";
+
 function About() {
   return (
     <>
@@ -175,7 +177,9 @@ Créatrice polyvalente entre événementiel, digital, cinéma et impact social. 
             ?
           </h3>
 
-          <GooeyButton className="text-amber-50">Collaborons !</GooeyButton>
+          <Link to="/ContactPage">
+            <GooeyButton className="text-amber-50">Collaborons !</GooeyButton>
+          </Link>
         </div>
       </section>
     </>

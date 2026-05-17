@@ -180,30 +180,9 @@ const Storyboard = () => {
         {/* TEXT */}
         <div className="relative z-20 text-right px-6 md:px-0">
 
-          {/* TITLE BACK */}
-          <motion.h1
-            initial={{
-              opacity: 0,
-              x: 80,
-            }}
-            whileInView={{
-              opacity: 1,
-              x: 0,
-            }}
-            viewport={{ once: true }}
-            transition={{
-              duration: 0.8,
-            }}
-            className="text-5xl sm:text-6xl md:text-[90px] lg:text-[120px]
-            uppercase tracking-[0.12em]
-            font-cormorant-bold-italic
-            text-[rgba(249,168,37,0.9)]
-            leading-none"
-          >
-            {item.title}
-          </motion.h1>
+         
 
-          {/* STROKE */}
+          {/* Text */}
           <motion.h1
             initial={{
               opacity: 0,
@@ -222,9 +201,9 @@ const Storyboard = () => {
             text-5xl sm:text-6xl md:text-[90px] lg:text-[120px]
             uppercase tracking-[0.12em]
             font-cormorant-bold-italic
-            text-transparent leading-none"
+            text-or/90 leading-none"
             style={{
-              WebkitTextStroke: "2px rgba(249,168,37,0.12)",
+              WebkitTextStroke: "2px rgba(249,168,37,0.9)",
             }}
           >
             {item.title}

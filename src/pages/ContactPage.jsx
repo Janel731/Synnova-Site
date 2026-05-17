@@ -13,15 +13,59 @@ import { FaTiktok } from "react-icons/fa6";
 function ContactSEO() {
   return (
     <Helmet>
-      <title>Contact | Synnova — Travaillons ensemble</title>
+  {/* ================= TITLE ================= */}
+  <title>
+    Contact | Synnova — Travaillons ensemble sur vos projets créatifs
+  </title>
 
-      <meta
-        name="description"
-        content="Contactez Synnova pour vos projets créatifs : événementiel, cinéma, communication digitale et impact social."
-      />
+  {/* ================= META DESCRIPTION ================= */}
+  <meta
+    name="description"
+    content="
+Contactez Synnova pour vos projets d’événements, cinéma, communication digitale ou entrepreneuriat social.
+Créons ensemble des expériences créatives, humaines et impactantes.
+"
+  />
 
-      <meta name="theme-color" content="#070A12" />
-    </Helmet>
+  {/* ================= KEYWORDS ================= */}
+  <meta
+    name="keywords"
+    content="
+contact Synnova, collaboration créative, animation événement, cinéma Afrique, communication digitale, entrepreneuriat social, créatrice de contenu Bénin, devis projet, partenariat artistique
+"
+  />
+
+  {/* ================= AUTHOR ================= */}
+  <meta name="author" content="Synnova" />
+
+  {/* ================= OPEN GRAPH ================= */}
+  <meta property="og:title" content="Contact | Synnova" />
+  <meta
+    property="og:description"
+    content="
+Travaillons ensemble sur des projets créatifs : événements, cinéma, communication digitale et impact social.
+"
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/og-contact.webp" />
+  <meta property="og:url" content="https://ton-site.com/contact" />
+
+  {/* ================= TWITTER ================= */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact | Synnova" />
+  <meta
+    name="twitter:description"
+    content="Une collaboration commence ici — créons ensemble."
+  />
+  <meta name="twitter:image" content="/assets/og-contact.webp" />
+
+  {/* ================= TECH ================= */}
+  <meta name="theme-color" content="#070A12" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  {/* ================= CANONICAL ================= */}
+  <link rel="canonical" href="https://ton-site.com/contact" />
+</Helmet>
   );
 }
 
@@ -83,7 +127,7 @@ function ContactPage() {
           Travaillons <span className="text-rose">ensemble</span>
         </h1>
 
-        <p className="text-white/60 mt-6 max-w-2xl mx-auto">
+        <p className="text-white/60 mt-6 max-w-2xl font-outfit-regular mx-auto">
           Une idée, un projet ou une collaboration ? Construisons quelque chose
           de fort.
         </p>
@@ -91,7 +135,7 @@ function ContactPage() {
 
       {/* ================= CONTENT ================= */}
       <section className="max-w-7xl mx-auto px-6 md:px-10 pb-24">
-        <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-20">
+        <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-20 font-outfit-regular">
           {/* ================= LEFT ================= */}
           <div className="space-y-8">
             <div className="rounded-[32px] border border-white/10 bg-white/[0.03] backdrop-blur-xl p-8 md:p-10">

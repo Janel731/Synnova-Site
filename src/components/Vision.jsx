@@ -41,15 +41,7 @@ const PopupCard = ({ isOpen, onClose, title, description, color, icon }) => {
             {description}
           </p>
 
-          {/* Bouton fermer */}
-          <div className="mt-8 flex justify-center">
-            <button
-              onClick={onClose}
-              className="px-6 py-3 bg-[#C2185B] text-white rounded-full hover:bg-[#F8BBD0] hover:text-[#1A237E] transition-all font-bold shadow-md hover:shadow-xl"
-            >
-              Explorer
-            </button>
-          </div>
+          
         </div>
 
         {/* Bouton fermer flottant */}
