@@ -53,7 +53,7 @@ function Hero() {
           content="Animatrice, communicatrice et actrice béninoise engagée."
         />
         <meta name="twitter:image" content="/og/home.jpg" />
-
+        <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href="https://ton-site.com/" />
       </Helmet>
 
@@ -89,8 +89,7 @@ function Hero() {
 
               {/* CTA SUR IMAGE */}
 
-              <Link to="/univers" >
-                
+              <Link to="/univers">
                 <LetterPullButton
                   className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 w-fit px-4 md:px-6 py-2 rounded-full border border-white/40 text-white/80 backdrop-blur-sm bg-[rgba(194,24,91,0.3)] hover:bg-[rgba(194,24,91,0.6)] transition font-outfit-regular text-xs md:text-base z-40"
                   text="Découvrir mes univers"
