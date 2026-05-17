@@ -45,7 +45,7 @@ const projects = [
     category: "Événements",
     image: FINAB,
   },
-  
+
   {
     id: 2,
     title: "Collecte de Kits scolaire",
@@ -114,7 +114,7 @@ const projects = [
     image: Radio,
   },
 
-   {
+  {
     id: 12,
     title: "Festival International des Arts du Bénin",
     category: "Cinéma",
@@ -135,161 +135,168 @@ function PortfolioPage() {
       : projects.filter((p) => p.category === activeCat);
 
   return (
-
     <>
+      <Helmet>
+        {/* ================= TITLE ================= */}
+        <title>
+          Portfolio & Galerie | Synnova — Projets, Cinéma, Événements &
+          Créations
+        </title>
 
-    <Helmet>
-  {/* ================= TITLE ================= */}
-  <title>
-    Portfolio & Galerie | Synnova — Projets, Cinéma, Événements & Créations
-  </title>
-
-  {/* ================= META DESCRIPTION ================= */}
-  <meta
-    name="description"
-    content="
+        {/* ================= META DESCRIPTION ================= */}
+        <meta
+          name="description"
+          content="
 Découvrez le portfolio de Synnova : événements culturels, projets cinéma, communication digitale, entrepreneuriat social et créations visuelles.
 Une galerie immersive de réalisations concrètes et d’expériences impactantes.
 "
-  />
+        />
 
-  {/* ================= KEYWORDS ================= */}
-  <meta
-    name="keywords"
-    content="
+        {/* ================= KEYWORDS ================= */}
+        <meta
+          name="keywords"
+          content="
 portfolio Synnova, galerie créative, événements Bénin, cinéma Afrique, communication digitale, création de contenu, régie plateau, projets artistiques, entrepreneuriat social, storytelling visuel
 "
-  />
+        />
 
-  {/* ================= AUTHOR ================= */}
-  <meta name="author" content="Synnova" />
+        {/* ================= AUTHOR ================= */}
+        <meta name="author" content="Synnova" />
 
-  {/* ================= OPEN GRAPH ================= */}
-  <meta property="og:title" content="Portfolio & Galerie | Synnova" />
-  <meta
-    property="og:description"
-    content="
+        {/* ================= OPEN GRAPH ================= */}
+        <meta property="og:title" content="Portfolio & Galerie | Synnova" />
+        <meta
+          property="og:description"
+          content="
 Explore les réalisations de Synnova : événements, cinéma, communication digitale et projets à impact social.
 "
-  />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/assets/og-portfolio.webp" />
-  <meta property="og:url" content="https://synnova-site.vercel.app/PortfolioPage" />
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/assets/og-portfolio.webp" />
+        <meta
+          property="og:url"
+          content="https://synnova-site.vercel.app/PortfolioPage"
+        />
 
-  {/* ================= TWITTER ================= */}
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Portfolio & Galerie | Synnova" />
-  <meta
-    name="twitter:description"
-    content="Une galerie immersive de projets créatifs et professionnels."
-  />
-  <meta name="twitter:image" content="/assets/og-portfolio.webp" />
+        {/* ================= TWITTER ================= */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Portfolio & Galerie | Synnova" />
+        <meta
+          name="twitter:description"
+          content="Une galerie immersive de projets créatifs et professionnels."
+        />
+        <meta name="twitter:image" content="/assets/og-portfolio.webp" />
 
-  {/* ================= TECH ================= */}
-  <meta name="theme-color" content="#070A12" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {/* ================= TECH ================= */}
+        <meta name="theme-color" content="#070A12" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  {/* ================= CANONICAL ================= */}
-  <link rel="canonical" href="https://synnova-site.vercel.app/PortfolioPage" />
-</Helmet>
+        {/* ================= CANONICAL ================= */}
+        <link
+          rel="canonical"
+          href="https://synnova-site.vercel.app/PortfolioPage"
+        />
+      </Helmet>
 
-    <main className="bg-[#070A12] text-white min-h-screen">
-      {/* ================= HERO ================= */}
-      <section className="min-h-[60vh] flex flex-col items-center justify-center text-center px-6">
-        <h1 className="text-4xl md:text-6xl font-dancing-bold text-or">
-          Réalisations
-        </h1>
+      <main className="bg-[#070A12] text-white min-h-screen">
+        {/* ================= HERO ================= */}
+        <section className="min-h-[60vh] flex flex-col items-center justify-center text-center px-6">
+          <h1 className="text-4xl md:text-6xl font-dancing-bold text-or">
+            Réalisations
+          </h1>
 
-        <p className="text-white/90 mt-4 max-w-xl font-outfit-regular">
-          Une vitrine des réalisations, expériences et collaborations de
-          Synnova.
-        </p>
-      </section>
+          <p className="text-white/90 mt-4 max-w-xl font-outfit-regular">
+            Une vitrine des réalisations, expériences et collaborations de
+            Synnova.
+          </p>
+        </section>
 
-      {/* ================= FILTERS ================= */}
-      <section className="flex flex-wrap justify-center gap-3 px-6 mb-10">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setActiveCat(cat)}
-            className={`px-5 py-2 rounded-full border transition ${
-              activeCat === cat
-                ? "bg-indigo text-white font-outfit-regular"
-                : "bg-white/5 hover:bg-white/10"
-            }`}
-          >
-            {cat}
-          </button>
-        ))}
-      </section>
-
-      {/* ================= GALLERY ================= */}
-      <section className="columns-2 md:columns-3 lg:columns-4 gap-4 px-6 space-y-4 pl-50">
-        <AnimatePresence>
-          {filtered.map((item) => (
-            <motion.div
-              key={item.id}
-              layout
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.4 }}
-              className="break-inside-avoid mb-4 group"
+        {/* ================= FILTERS ================= */}
+        <section className="flex flex-wrap justify-center gap-3 px-6 mb-10">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCat(cat)}
+              className={`px-5 py-2 rounded-full border transition ${
+                activeCat === cat
+                  ? "bg-indigo text-white font-outfit-regular"
+                  : "bg-white/5 hover:bg-white/10"
+              }`}
             >
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full rounded-xl object-cover transition duration-300 group-hover:scale-105"
-              />
-
-              <p className="text-sm text-or/40 mt-2 font-outfit-regular">{item.title}</p>
-            </motion.div>
+              {cat}
+            </button>
           ))}
-        </AnimatePresence>
-      </section>
+        </section>
 
-      {/* ================= EVENTS ================= */}
-      <section className="px-6 mt-20 max-w-5xl mx-auto">
-        <h2 className="text-2xl md:text-6xl font-bold mb-6 font-dancing-bold text-indigo">
-          Événements marquants
-        </h2>
+        {/* ================= GALLERY ================= */}
+        <section className="columns-2 md:columns-3 lg:columns-4 gap-4 px-6 space-y-4 pl-50">
+          <AnimatePresence>
+            {filtered.map((item) => (
+              <motion.div
+                key={item.id}
+                layout
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.4 }}
+                className="break-inside-avoid mb-4 group"
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full rounded-xl object-cover transition duration-300 group-hover:scale-105"
+                  loading="lazy"
+                />
 
-        <div className="text-2xl md:text-3xl space-y-4 text-white/70 font-outfit-regular">
-          <BlurFade delay={0.25} inView>
-            <p>
-              <span className="text-indigo">•</span> Festival International des
-              Arts du Bénin
-            </p>
-          </BlurFade>
+                <p className="text-sm text-or/40 mt-2 font-outfit-regular">
+                  {item.title}
+                </p>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </section>
 
-          <BlurFade delay={0.25} inView>
-            <p>
-              <span className="text-indigo">•</span> Animations live lors
-              d’événements culturels et privés
-            </p>
-          </BlurFade>
+        {/* ================= EVENTS ================= */}
+        <section className="px-6 mt-20 max-w-5xl mx-auto">
+          <h2 className="text-2xl md:text-6xl font-bold mb-6 font-dancing-bold text-indigo">
+            Événements marquants
+          </h2>
 
-          <BlurFade delay={0.25} inView>
-            <p>
-              <span className="text-indigo">•</span> Projets audiovisuels et
-              productions locales
-            </p>
-          </BlurFade>
+          <div className="text-2xl md:text-3xl space-y-4 text-white/70 font-outfit-regular">
+            <BlurFade delay={0.25} inView>
+              <p>
+                <span className="text-indigo">•</span> Festival International
+                des Arts du Bénin
+              </p>
+            </BlurFade>
 
-          <BlurFade delay={0.25} inView>
-            <p>
-              <span className="text-indigo">•</span> Miss Photogénique 2022
-            </p>
-          </BlurFade>
-        </div>
-      </section>
+            <BlurFade delay={0.25} inView>
+              <p>
+                <span className="text-indigo">•</span> Animations live lors
+                d’événements culturels et privés
+              </p>
+            </BlurFade>
 
-      {/* ================= TESTIMONIALS ================= */}
-      <section className="px-6 mt-20 max-w-5xl mx-auto ">
-        <TestimonialsSection></TestimonialsSection>
-      </section>
-    </main>
+            <BlurFade delay={0.25} inView>
+              <p>
+                <span className="text-indigo">•</span> Projets audiovisuels et
+                productions locales
+              </p>
+            </BlurFade>
 
+            <BlurFade delay={0.25} inView>
+              <p>
+                <span className="text-indigo">•</span> Miss Photogénique 2022
+              </p>
+            </BlurFade>
+          </div>
+        </section>
+
+        {/* ================= TESTIMONIALS ================= */}
+        <section className="px-6 mt-20 max-w-5xl mx-auto ">
+          <TestimonialsSection></TestimonialsSection>
+        </section>
+      </main>
     </>
   );
 }

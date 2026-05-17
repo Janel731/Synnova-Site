@@ -157,58 +157,63 @@ function UniversPage() {
 
   return (
     <>
-     <Helmet>
-  {/* ================= TITLE ================= */}
-  <title>Mes Univers | Synnova — Création, Cinéma, Communication & Impact</title>
+      <Helmet>
+        {/* ================= TITLE ================= */}
+        <title>
+          Mes Univers | Synnova — Création, Cinéma, Communication & Impact
+        </title>
 
-  {/* ================= META DESCRIPTION ================= */}
-  <meta
-    name="description"
-    content="
+        {/* ================= META DESCRIPTION ================= */}
+        <meta
+          name="description"
+          content="
 Explore les univers créatifs de Synnova : animation d’événements, communication digitale, cinéma & régie, entrepreneuriat social et galerie artistique.
 Un voyage immersif entre création, émotion et impact positif.
 "
-  />
+        />
 
-  {/* ================= KEYWORDS ================= */}
-  <meta
-    name="keywords"
-    content="
+        {/* ================= KEYWORDS ================= */}
+        <meta
+          name="keywords"
+          content="
 Synnova univers, animation événement Afrique, communication digitale, création de contenu, cinéma Afrique, régie plateau, entrepreneuriat social, impact écologique, portfolio créatif, storytelling, artiste Bénin
 "
-  />
+        />
 
-  {/* ================= AUTHOR ================= */}
-  <meta name="author" content="Synnova" />
+        {/* ================= AUTHOR ================= */}
+        <meta name="author" content="Synnova" />
 
-  {/* ================= OPEN GRAPH ================= */}
-  <meta property="og:title" content="Mes Univers | Synnova" />
-  <meta
-    property="og:description"
-    content="
+        {/* ================= OPEN GRAPH ================= */}
+        <meta property="og:title" content="Mes Univers | Synnova" />
+        <meta
+          property="og:description"
+          content="
 Explore un voyage immersif à travers les univers créatifs de Synnova : événementiel, digital, cinéma et entrepreneuriat social.
 "
-  />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/assets/og-univers.webp" />
-  <meta property="og:url" content="https://synnova-site.vercel.app/univers" />
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/assets/og-univers.webp" />
+        <meta
+          property="og:url"
+          content="https://synnova-site.vercel.app/univers"
+        />
 
-  {/* ================= TWITTER ================= */}
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Mes Univers | Synnova" />
-  <meta
-    name="twitter:description"
-    content="Un voyage immersif entre création, art et impact social."
-  />
-  <meta name="twitter:image" content="/assets/og-univers.webp" />
+        {/* ================= TWITTER ================= */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Mes Univers | Synnova" />
+        <meta
+          name="twitter:description"
+          content="Un voyage immersif entre création, art et impact social."
+        />
+        <meta name="twitter:image" content="/assets/og-univers.webp" />
 
-  {/* ================= TECH ================= */}
-  <meta name="theme-color" content="#070A12" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {/* ================= TECH ================= */}
+        <meta name="theme-color" content="#070A12" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  {/* ================= CANONICAL ================= */}
-  <link rel="canonical" href="https://synnova-site.vercel.app/univers" />
-</Helmet>
+        {/* ================= CANONICAL ================= */}
+        <link rel="canonical" href="https://synnova-site.vercel.app/univers" />
+      </Helmet>
 
       <main className="min-h-screen bg-[#070A12] text-white overflow-hidden">
         {/* ================= HUB ================= */}
@@ -263,6 +268,8 @@ Explore un voyage immersif à travers les univers créatifs de Synnova : événe
               <img
                 src={active.image}
                 className="absolute inset-0 w-full h-full object-cover opacity-25"
+                alt="Synnova lors d’un événement culturel"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-black/70" />
 
@@ -376,7 +383,9 @@ Explore un voyage immersif à travers les univers créatifs de Synnova : événe
               transition-transform
               duration-700
               group-hover:scale-110
+
               "
+                          loading="lazy"
                         />
 
                         {/* OVERLAY */}

@@ -14,7 +14,9 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <header>
+        <Navbar />
+      </header>
 
       <ScrollToTop />
 
@@ -32,7 +34,9 @@ function App() {
         </main>
       </AnimatePresence>
 
-      <Footer></Footer>
+      <footer>
+        <Footer></Footer>
+      </footer>
     </>
   );
 }

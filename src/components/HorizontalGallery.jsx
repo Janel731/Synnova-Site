@@ -44,8 +44,6 @@ export default function HorizontalGallery() {
       ref={sectionRef}
       className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] h-screen overflow-hidden relative"
     >
-
-      
       <div
         ref={containerRef}
         className="flex h-screen items-center px-6 md:px-12 gap-6 md:gap-12"
@@ -61,9 +59,10 @@ export default function HorizontalGallery() {
                 src={item.image}
                 alt={item.title}
                 className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 grayscale group-hover:grayscale-0"
+                loading="lazy"
               />
             </div>
-            
+
             <div className="absolute inset-0 bg-gradient-to-t from-[rgba(13,17,64,0.8)] to-transparent pointer-events-none" />
 
             <div className="absolute bottom-8 left-8 md:bottom-12 md:left-12 pointer-events-none">

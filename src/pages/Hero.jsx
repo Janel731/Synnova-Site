@@ -20,7 +20,10 @@ function Hero() {
           Synnova Tocloe | Animatrice, Communicatrice & Actrice au Bénin
         </title>
 
-        <meta name="google-site-verification" content="8U0ueKq8HRPHyI6OwgwO6gvuF1XO1jr3joTmRjnhEWU" />
+        <meta
+          name="google-site-verification"
+          content="8U0ueKq8HRPHyI6OwgwO6gvuF1XO1jr3joTmRjnhEWU"
+        />
         <meta
           name="description"
           content="Découvrez Synnova Tocloe, animatrice, communicatrice, actrice et entrepreneuse sociale béninoise engagée entre Grand-Popo, le cinéma et la communication digitale."
@@ -86,6 +89,7 @@ function Hero() {
                 src={SynnovaPhoto}
                 alt="Portrait Synnova"
                 className="absolute inset-0 w-full h-full object-cover z-10 mix-blend-overlay"
+                loading="lazy"
               />
 
               {/* CTA SUR IMAGE */}
