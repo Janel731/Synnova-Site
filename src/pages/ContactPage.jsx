@@ -1,60 +1,41 @@
 "use client";
 
 import { useForm } from "react-hook-form";
-// import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import transition from '../transition'
+import emailjs from "@emailjs/browser";
+import transition from "../transition";
+import { Mail, Phone } from "lucide-react";
+
+import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaTiktok } from "react-icons/fa6";
 
 function ContactSEO() {
   return (
     <Helmet>
-
       <title>Contact | Synnova — Travaillons ensemble</title>
 
       <meta
         name="description"
-        content="
-Contactez Synnova pour vos projets d’événements, cinéma, communication digitale ou entrepreneuriat social. 
-Créons ensemble des expériences impactantes.
-"
+        content="Contactez Synnova pour vos projets créatifs : événementiel, cinéma, communication digitale et impact social."
       />
-
-      <meta
-        name="keywords"
-        content="
-contact Synnova, animation événement, cinéma Afrique, communication digitale, entrepreneuriat social, collaboration créative, créatrice de contenu Bénin
-"
-      />
-
-      <meta name="author" content="Synnova" />
-
-      <meta property="og:title" content="Contact | Synnova" />
-      <meta property="og:description" content="Travaillons ensemble sur des projets créatifs et impactants." />
-      <meta property="og:type" content="website" />
-      <meta property="og:image" content="/assets/og-contact.webp" />
-      <meta property="og:url" content="https://ton-site.com/contact" />
 
       <meta name="theme-color" content="#070A12" />
-
     </Helmet>
   );
 }
 
 /* -------------------------------------------------------------------------- */
-/*                                COMPONENT                                   */
-/* -------------------------------------------------------------------------- */
 
- function ContactPage() {
-
+function ContactPage() {
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitting },
+    formState: { errors },
   } = useForm();
 
-  const [status, setStatus] = useState(null);
+  const [status, setStatus] = useState("idle"); // idle | loading | success | error
 
   const types = [
     "Animation d’événement",
@@ -69,147 +50,199 @@ contact Synnova, animation événement, cinéma Afrique, communication digitale,
 
     try {
       await emailjs.send(
-        "SERVICE_ID",
-        "TEMPLATE_ID",
+        "service_1ctclti",
+        "template_2lbxj7l",
         {
           name: data.name,
           email: data.email,
           type: data.type,
           message: data.message,
         },
-        "PUBLIC_KEY"
+        "x3GQXpAH05Lum3pbF",
       );
 
       setStatus("success");
       reset();
 
-      setTimeout(() => setStatus(null), 3000);
+      setTimeout(() => setStatus("idle"), 4000);
     } catch (error) {
+      console.error(error);
       setStatus("error");
+
+      setTimeout(() => setStatus("idle"), 5000);
     }
   };
 
   return (
-    <main className="min-h-screen bg-[#070A12] text-white">
-
+    <main className="min-h-screen bg-[#070A12] text-white overflow-hidden">
       <ContactSEO />
 
-      {/* ================= HEADER ================= */}
-      <section className="text-center py-20 px-6">
-
-        <h1 className="text-4xl md:text-6xl font-bold">
-          Travaillons ensemble
+      {/* ================= HERO ================= */}
+      <section className="pt-28 pb-16 text-center px-6">
+        <h1 className="text-5xl md:text-7xl font-dancing-bold">
+          Travaillons <span className="text-rose">ensemble</span>
         </h1>
 
-        <p className="text-white/60 mt-4 max-w-xl mx-auto">
-          Simple, chaleureux et fonctionnel — une idée, un projet, une vision ?
+        <p className="text-white/60 mt-6 max-w-2xl mx-auto">
+          Une idée, un projet ou une collaboration ? Construisons quelque chose
+          de fort.
         </p>
-
       </section>
 
-      {/* ================= FORM ================= */}
-      <section className="max-w-3xl mx-auto px-6">
+      {/* ================= CONTENT ================= */}
+      <section className="max-w-7xl mx-auto px-6 md:px-10 pb-24">
+        <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-20">
+          {/* ================= LEFT ================= */}
+          <div className="space-y-8">
+            <div className="rounded-[32px] border border-white/10 bg-white/[0.03] backdrop-blur-xl p-8 md:p-10">
+              <h2 className="text-4xl font-dancing-bold">Synnova</h2>
 
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="space-y-5 bg-white/5 p-6 rounded-2xl"
-        >
+              <p className="text-white/60 mt-5 leading-relaxed">
+                Prenons contact et donnons vie à des projets créatifs, humains
+                et impactants.
+              </p>
 
-          {/* NAME */}
-          <input
-            placeholder="Prénom / Nom"
-            className="w-full p-3 rounded-xl bg-black/40 border border-white/10"
-            {...register("name", { required: true })}
-          />
+              {/* CONTACT INFO */}
+              <div className="mt-10 space-y-5">
+                <div className="flex items-center gap-4">
+                  <Phone size={18} />
+                  <div>
+                    <p className="text-white/40 text-sm">Téléphone</p>
+                    <p>+229 XX XX XX XX</p>
+                  </div>
+                </div>
 
-          {/* EMAIL */}
-          <input
-            placeholder="Email"
-            className="w-full p-3 rounded-xl bg-black/40 border border-white/10"
-            {...register("email", { required: true })}
-          />
+                <div className="flex items-center gap-4">
+                  <Mail size={18} />
+                  <div>
+                    <p className="text-white/40 text-sm">Email</p>
+                    <p>contact@synnova.com</p>
+                  </div>
+                </div>
+              </div>
 
-          {/* TYPE DEMANDE */}
-          <select
-            className="w-full p-3 rounded-xl bg-black/40 border border-white/10"
-            {...register("type")}
-          >
-            {types.map((t) => (
-              <option key={t} value={t}>
-                {t}
-              </option>
-            ))}
-          </select>
+              {/* SOCIALS */}
+              <div className="mt-10 flex gap-4">
+                <a
+                  href="#"
+                  className="p-3 rounded-full bg-white/5 hover:bg-white/10"
+                >
+                  <FaFacebook size={18} />
+                </a>
 
-          {/* MESSAGE */}
-          <textarea
-            rows="5"
-            placeholder="Votre message..."
-            className="w-full p-3 rounded-xl bg-black/40 border border-white/10"
-            {...register("message", { required: true })}
-          />
+                <a
+                  href="#"
+                  className="p-3 rounded-full bg-white/5 hover:bg-white/10"
+                >
+                  <FaInstagram size={18} />
+                </a>
 
-          {/* BUTTON */}
-          <button
-            disabled={isSubmitting}
-            className="w-full py-3 rounded-xl bg-white text-black font-medium"
-          >
-            {isSubmitting ? "Envoi..." : "Envoyer"}
-          </button>
+                <a
+                  href="#"
+                  className="p-3 rounded-full bg-white/5 hover:bg-white/10"
+                >
+                  <FaTiktok size={18} />
+                </a>
 
-          {/* STATUS */}
-          {status === "success" && (
-            <p className="text-green-400">Message envoyé ✨</p>
-          )}
+                <a
+                  href="#"
+                  className="p-3 rounded-full bg-white/5 hover:bg-white/10"
+                >
+                  <FaLinkedin size={18} />
+                </a>
+              </div>
+            </div>
+          </div>
 
-          {status === "error" && (
-            <p className="text-red-400">Erreur d’envoi</p>
-          )}
+          {/* ================= FORM ================= */}
+          <div className="rounded-[32px] border border-white/10 bg-white/[0.03] backdrop-blur-xl p-6 md:p-10">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              {/* NAME */}
+              <input
+                placeholder="Prénom / Nom"
+                className="w-full p-4 rounded-2xl bg-black/30 border border-white/10"
+                {...register("name", { required: true })}
+              />
+              {errors.name && (
+                <p className="text-red-400 text-sm">Nom requis</p>
+              )}
 
-        </form>
+              {/* EMAIL */}
+              <input
+                placeholder="Email"
+                className="w-full p-4 rounded-2xl bg-black/30 border border-white/10"
+                {...register("email", { required: true })}
+              />
+              {errors.email && (
+                <p className="text-red-400 text-sm">Email requis</p>
+              )}
 
-      </section>
+              {/* TYPE */}
+              <select
+                className="w-full p-4 rounded-2xl bg-black/30 border border-white/10"
+                {...register("type")}
+              >
+                {types.map((t) => (
+                  <option key={t}>{t}</option>
+                ))}
+              </select>
 
-      {/* ================= SOCIALS ================= */}
-      <section className="text-center mt-16 px-6">
+              {/* MESSAGE */}
+              <textarea
+                rows="6"
+                placeholder="Message..."
+                className="w-full p-4 rounded-2xl bg-black/30 border border-white/10 resize-none"
+                {...register("message", { required: true })}
+              />
+              {errors.message && (
+                <p className="text-red-400 text-sm">Message requis</p>
+              )}
 
-        <p className="text-white/60 mb-4">
-          Réseaux sociaux
-        </p>
+              {/* BUTTON */}
+              <button
+                disabled={status === "loading"}
+                className="w-full py-4 rounded-2xl bg-white text-black font-medium hover:scale-[1.02] transition"
+              >
+                {status === "loading" ? "Envoi..." : "Envoyer"}
+              </button>
 
-        <div className="flex flex-wrap justify-center gap-6 text-white/80">
+              {/* FEEDBACK */}
+              <div className="h-12 flex items-center">
+                {status === "loading" && (
+                  <div className="flex items-center gap-3 text-white/70">
+                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    <p className="tracking-wide">
+                      Envoi du message en cours...
+                    </p>
+                  </div>
+                )}
 
-          <a href="https://www.facebook.com/synnovalumiere" target="_blank">
-            Facebook
-          </a>
+                {status === "success" && (
+                  <div className="flex items-center gap-3 text-green-400">
+                    <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center">
+                      ✔
+                    </div>
+                    <p className="tracking-wide">Message envoyé avec succès</p>
+                  </div>
+                )}
 
-          <a href="https://www.tiktok.com/@_synnova" target="_blank">
-            TikTok
-          </a>
-
-          <a href="https://www.instagram.com/_synnova" target="_blank">
-            Instagram
-          </a>
-
-          <a href="#">
-            LinkedIn
-          </a>
-
+                {status === "error" && (
+                  <div className="flex items-center gap-3 text-red-400">
+                    <div className="w-6 h-6 rounded-full bg-red-500/20 flex items-center justify-center">
+                      ✖
+                    </div>
+                    <p className="tracking-wide">
+                      Une erreur est survenue, réessaie
+                    </p>
+                  </div>
+                )}
+              </div>
+            </form>
+          </div>
         </div>
-
       </section>
-
-      {/* ================= CTA FOLLOW ================= */}
-      <section className="text-center mt-12 mb-20 px-6">
-
-        <p className="text-white/50">
-          Suivez mon quotidien sur TikTok & Instagram ✨
-        </p>
-
-      </section>
-
     </main>
   );
 }
 
-export default transition(ContactPage)
+export default transition(ContactPage);

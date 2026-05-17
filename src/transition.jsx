@@ -7,19 +7,24 @@ const transition = (OgComponent) => {
         <OgComponent />
 
         <motion.div
-          initial={{ scaleY: 1 }}
-          animate={{ scaleY: 0 }}
-          exit={{ scaleY: 1 }}
+          initial={{
+            opacity: 1,
+            backdropFilter: "blur(40px)",
+          }}
+          animate={{
+            opacity: 0,
+            backdropFilter: "blur(0px)",
+          }}
+          exit={{
+            opacity: 1,
+            backdropFilter: "blur(40px)",
+          }}
           transition={{
-            duration: 1,
+            duration: 0.8,
             ease: [0.22, 1, 0.36, 1],
           }}
-          style={{
-            transformOrigin: "top",
-          }}
-          className="fixed inset-0 bg-[#1A237E] z-[9999]">
-            
-        </motion.div>
+          className="fixed inset-0 bg-black/40 pointer-events-none z-[9999]"
+        />
       </>
     );
   };

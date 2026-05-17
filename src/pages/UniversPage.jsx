@@ -1,8 +1,22 @@
 "use client";
+
 import { Helmet } from "react-helmet-async";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import transition from "../transition"
+import transition from "../transition";
+import { BlurFade } from "@/components/ui/blur-fade";
+import animation from "../assets/animation.webp";
+import animation2 from "../assets/animation2.webp";
+import CIPD from "../assets/CIPD.webp";
+import CV from "../assets/CV.webp";
+import JV from "../assets/JV.webp";
+import UR from "../assets/UR.webp";
+import Don from "../assets/Don.webp";
+import engagement from "../assets/engagement.webp";
+import cinema from "../assets/cine.webp";
+import eco from "../assets/eco.webp";
+import { Link } from "react-router-dom";
+
 /* -------------------------------------------------------------------------- */
 /*                                UNIVERS DATA                                */
 /* -------------------------------------------------------------------------- */
@@ -13,15 +27,13 @@ const universes = [
     title: "Animation & Événements",
     color: "#E91E63",
     image: "/assets/animation.webp",
-    gallery: ["/assets/anim1.webp", "/assets/anim2.webp", "/assets/anim3.webp"],
+    gallery: [animation],
     intro:
       "Des expériences vivantes qui captivent, rassemblent et marquent les esprits.",
     content: `
-Je conçois et anime des événements qui deviennent des expériences mémorables.
-
-Animations live, événements culturels, programmes jeunesse et interventions publiques.
-
-👉 Chaque instant est pensé pour créer de l’émotion et du souvenir.
+Créer des expériences événementielles vivantes et mémorables  
+Animer et captiver des publics lors d’événements culturels et privés  
+Transformer chaque moment en une expérience immersive et engageante  
 `,
     cta: "Créer un événement ensemble",
     next: "communication",
@@ -33,15 +45,13 @@ Animations live, événements culturels, programmes jeunesse et interventions pu
     title: "Communication Digitale",
     color: "#7E57C2",
     image: "/assets/communication.webp",
-    gallery: ["/assets/com1.webp", "/assets/com2.webp", "/assets/com3.webp"],
+    gallery: [engagement],
     intro:
       "Des contenus stratégiques qui attirent, engagent et construisent une image forte.",
     content: `
-Je crée du contenu digital pensé pour transformer une présence en impact.
-
-Stratégie, storytelling, identité visuelle et réseaux sociaux.
-
-👉 Ici, on ne publie pas… on construit une marque vivante.
+Construire des stratégies de communication qui attirent et engagent  
+Créer du contenu digital cohérent et impactant pour les réseaux sociaux  
+Développer une identité forte qui transforme une audience en communauté  
 `,
     cta: "Développer ta présence digitale",
     next: "cinema",
@@ -53,15 +63,13 @@ Stratégie, storytelling, identité visuelle et réseaux sociaux.
     title: "Cinéma & Régie",
     color: "#607D8B",
     image: "/assets/cinema.webp",
-    gallery: ["/assets/cine1.webp", "/assets/cine2.webp", "/assets/cine3.webp"],
+    gallery: [cinema],
     intro:
       "Des histoires mises en scène avec précision, émotion et vision artistique.",
     content: `
-Actrice et régisseuse plateau, je participe à des productions audiovisuelles et culturelles.
-
-Chaque projet est une scène où l’exécution sert l’émotion.
-
-👉 Créer ici, c’est donner vie à des histoires qui restent.
+Participer à des productions audiovisuelles et projets cinématographiques  
+Intervenir en tant qu’actrice et régisseuse plateau sur les tournages  
+Assurer la coordination et la fluidité des scènes et des productions  
 `,
     cta: "Créer une production ensemble",
     next: "eco",
@@ -73,14 +81,12 @@ Chaque projet est une scène où l’exécution sert l’émotion.
     title: "Entrepreneuriat Social",
     color: "#66BB6A",
     image: "/assets/eco.webp",
-    gallery: ["/assets/eco1.webp", "/assets/eco2.webp", "/assets/eco3.webp"],
+    gallery: [eco],
     intro: "Des solutions concrètes pour un impact réel et durable.",
     content: `
-Je développe des projets écologiques et responsables.
-
-Emballages biodégradables et solutions locales durables.
-
-👉 Construire aujourd’hui pour protéger demain.
+Développer des solutions écologiques et responsables adaptées aux besoins locaux  
+Créer des emballages biodégradables pour réduire l’impact environnemental  
+Promouvoir des initiatives à impact social pour un avenir durable  
 `,
     cta: "Construire un projet durable",
     next: "gallery",
@@ -92,23 +98,9 @@ Emballages biodégradables et solutions locales durables.
     title: "Galerie",
     color: "#B0BEC5",
     image: "/assets/gallery.webp",
-    gallery: [
-      "/assets/gallery1.webp",
-      "/assets/gallery2.webp",
-      "/assets/gallery3.webp",
-      "/assets/gallery4.webp",
-      "/assets/gallery5.webp",
-      "/assets/gallery6.webp",
-    ],
-    intro:
-      "Un voyage visuel à travers les moments, les projets et les expériences.",
-    content: `
-Chaque image raconte une histoire.
-
-Un parcours entre création, engagement et impact.
-
-👉 Si ces images résonnent… alors nous avons quelque chose à créer ensemble.
-`,
+    gallery: [animation2, CIPD, CV, JV, UR, Don],
+    intro: "Un voyage visuel à travers les moments et expériences.",
+    content: `Chaque image raconte une histoire.`,
     cta: "Collaborer sur un projet",
     next: null,
     prev: "eco",
@@ -118,26 +110,18 @@ Un parcours entre création, engagement et impact.
 /* -------------------------------------------------------------------------- */
 /*                                COMPONENT                                   */
 /* -------------------------------------------------------------------------- */
- function UniversPage() {
+
+function UniversPage() {
   const [active, setActive] = useState(null);
   const [transition, setTransition] = useState(null);
   const [lock, setLock] = useState(false);
 
   const get = (id) => universes.find((u) => u.id === id);
 
-  const open = (u) => {
+  /* ----------------------------- CORE FIX ----------------------------- */
+  const changeUniverse = (id) => {
     if (lock) return;
-    setLock(true);
 
-    setTransition(u.color);
-
-    setTimeout(() => {
-      setActive(u);
-    }, 650);
-  };
-
-  const nav = (id) => {
-    if (lock) return;
     const u = get(id);
     if (!u) return;
 
@@ -146,6 +130,12 @@ Un parcours entre création, engagement et impact.
 
     setTimeout(() => {
       setActive(u);
+
+      // 🔥 FIX BUG SCROLL
+      window.scrollTo({
+        top: 0,
+        behavior: "instant",
+      });
     }, 650);
   };
 
@@ -157,63 +147,18 @@ Un parcours entre création, engagement et impact.
 
     setTimeout(() => {
       setActive(null);
+
+      window.scrollTo({
+        top: 0,
+        behavior: "instant",
+      });
     }, 650);
   };
 
   return (
     <>
       <Helmet>
-        {/* ================= TITLE ================= */}
-        <title>
-          Mes Univers | Synnova — Création, Cinéma, Communication & Impact
-        </title>
-
-        {/* ================= META DESCRIPTION ================= */}
-        <meta
-          name="description"
-          content="
-Explore les univers de Synnova : animation d'événements, communication digitale, cinéma & régie, entrepreneuriat social et galerie créative. 
-Un voyage immersif entre création, engagement et impact positif.
-"
-        />
-
-        {/* ================= KEYWORDS ================= */}
-        <meta
-          name="keywords"
-          content="
-Synnova, univers créatifs, animation événements, communication digitale, création de contenu, cinéma Afrique, régie plateau, entrepreneuriat social, impact écologique, portfolio créatif, storytelling, créatrice de contenu Bénin
-"
-        />
-
-        {/* ================= AUTHOR ================= */}
-        <meta name="author" content="Synnova" />
-
-        {/* ================= OPEN GRAPH (FACEBOOK / LINKEDIN) ================= */}
-        <meta property="og:title" content="Mes Univers | Synnova" />
-        <meta
-          property="og:description"
-          content="
-Explore un voyage immersif à travers les univers créatifs de Synnova : événementiel, digital, cinéma et entrepreneuriat social.
-"
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="/assets/og-univers.webp" />
-        <meta property="og:url" content="https://ton-site.com/univers" />
-
-        {/* ================= TWITTER CARD ================= */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Mes Univers | Synnova" />
-        <meta
-          name="twitter:description"
-          content="Un voyage immersif entre création, engagement et impact."
-        />
-        <meta name="twitter:image" content="/assets/og-univers.webp" />
-
-        {/* ================= VIEWPORT ================= */}
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        {/* ================= THEME ================= */}
-        <meta name="theme-color" content="#070A12" />
+        <title>Mes Univers | Synnova</title>
       </Helmet>
 
       <main className="min-h-screen bg-[#070A12] text-white overflow-hidden">
@@ -221,53 +166,39 @@ Explore un voyage immersif à travers les univers créatifs de Synnova : événe
         {!active && (
           <section className="flex min-h-screen items-center justify-center px-4">
             <div className="text-center">
-              <h1 className="text-4xl md:text-6xl font-bold">Mes Univers</h1>
-
-              <p className="text-white/40 mt-3">
-                Explore des mondes créatifs immersifs
-              </p>
-
+              <BlurFade delay={0.25} inView>
+                <h1 className="text-4xl md:text-6xl font-dancing-bold">
+                  Mes <span className="text-rose">Univers</span>
+                </h1>
+              </BlurFade>
               <div className="flex flex-wrap justify-center gap-4 mt-10">
                 {universes.map((u) => (
-                  <button
-                    key={u.id}
-                    onClick={() => open(u)}
-                    className="px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 transition"
-                    style={{ border: `1px solid ${u.color}` }}
-                  >
-                    {u.title}
-                  </button>
+                  <BlurFade delay={0.25} inView>
+                    <button
+                      key={u.id}
+                      onClick={() => changeUniverse(u.id)}
+                      className="px-6 py-3 rounded-full bg-white/10 text-xl font-dancing-medium"
+                      style={{ border: `1px solid ${u.color}` }}
+                    >
+                      {u.title}
+                    </button>
+                  </BlurFade>
                 ))}
               </div>
             </div>
           </section>
         )}
 
-        {/* ================= TRANSITION (SOFT & FLUIDE) ================= */}
+        {/* ================= TRANSITION ================= */}
         <AnimatePresence>
           {transition && (
             <motion.div
               className="fixed inset-0 z-[100]"
               style={{ backgroundColor: transition }}
-              initial={{
-                opacity: 0,
-                scale: 1.05,
-                filter: "blur(10px)",
-              }}
-              animate={{
-                opacity: 1,
-                scale: 1,
-                filter: "blur(0px)",
-              }}
-              exit={{
-                opacity: 0,
-                scale: 1.05,
-                filter: "blur(10px)",
-              }}
-              transition={{
-                duration: 0.6,
-                ease: "easeInOut",
-              }}
+              initial={{ opacity: 0, scale: 1.05, filter: "blur(10px)" }}
+              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              exit={{ opacity: 0, scale: 1.05, filter: "blur(10px)" }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
               onAnimationComplete={() => {
                 setTransition(null);
                 setLock(false);
@@ -276,71 +207,176 @@ Explore un voyage immersif à travers les univers créatifs de Synnova : événe
           )}
         </AnimatePresence>
 
-        {/* ================= UNIVERS ================= */}
+        {/* ================= ACTIVE UNIVERS ================= */}
         {active && (
           <section>
-            {/* HERO IMAGE */}
             <div className="relative h-screen flex items-center justify-center text-center">
               <img
                 src={active.image}
                 className="absolute inset-0 w-full h-full object-cover opacity-25"
               />
-
               <div className="absolute inset-0 bg-black/70" />
 
               <div>
                 <h1
-                  className="text-4xl md:text-6xl font-bold"
+                  className="text-4xl md:text-6xl font-dancing-bold"
                   style={{ color: active.color }}
                 >
                   {active.title}
                 </h1>
 
-                <p className="text-white/60 mt-4 max-w-xl mx-auto">
+                <p className="text-white/60 mt-4 max-w-xl mx-auto font-outfit-light">
                   {active.intro}
                 </p>
               </div>
             </div>
 
-            {/* CONTENT */}
-            <div className="max-w-5xl mx-auto px-6 py-20">
-              <p className="text-white/70 whitespace-pre-line mb-12 leading-relaxed">
-                {active.content}
-              </p>
+            <div className="max-w-7xl mx-auto px-6 md:px-10 py-20">
+              {/* MAIN LAYOUT */}
+              <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-20 items-start">
+                {/* LEFT CONTENT */}
+                <div className="space-y-5">
+                  {active.content
+                    .trim()
+                    .split("\n")
+                    .filter((line) => line.trim() !== "")
+                    .map((line, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{
+                          opacity: 0,
+                          x: -40,
+                        }}
+                        whileInView={{
+                          opacity: 1,
+                          x: 0,
+                        }}
+                        viewport={{ once: true }}
+                        transition={{
+                          duration: 0.5,
+                          delay: i * 0.08,
+                        }}
+                        className="
+            flex items-center gap-4
+            p-5 md:p-6
+            rounded-[28px]
+            bg-white/[0.04]
+            border border-white/5
+            backdrop-blur-md
+            hover:bg-white/[0.06]
+            transition-all duration-500
+            "
+                      >
+                        {/* DOT */}
+                        <div
+                          className="w-3 h-3 rounded-full shrink-0"
+                          style={{
+                            backgroundColor: active.color,
+                          }}
+                        />
 
-              {/* 🖼️ IMAGES UNIVERS (IMPORTANT AJOUT) */}
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-16">
-                {active.gallery.map((img, i) => (
-                  <motion.img
-                    key={i}
-                    src={img}
-                    className="rounded-xl h-[200px] md:h-[260px] w-full object-cover"
-                    initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-                    whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                  />
-                ))}
+                        {/* TEXT */}
+                        <p
+                          className="
+              text-white/80
+              font-outfit-light
+              leading-relaxed
+              text-sm md:text-base
+              max-w-[420px]
+              "
+                        >
+                          {line}
+                        </p>
+                      </motion.div>
+                    ))}
+                </div>
+
+                {/* RIGHT GALLERY */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  {active.gallery.map((img, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{
+                        opacity: 0,
+                        y: 60,
+                      }}
+                      whileInView={{
+                        opacity: 1,
+                        y: 0,
+                      }}
+                      viewport={{ once: true }}
+                      transition={{
+                        duration: 0.7,
+                        delay: i * 0.1,
+                      }}
+                      className="
+          group
+          relative
+          overflow-hidden
+          rounded-[32px]
+          "
+                    >
+                      <div className="aspect-[4/5] md:aspect-[4/4.8] overflow-hidden bg-white/5">
+                        <img
+                          src={img}
+                          alt="Synnova"
+                          className="
+              w-full
+              h-full
+              object-cover
+              transition-transform
+              duration-700
+              group-hover:scale-110
+              "
+                        />
+
+                        {/* OVERLAY */}
+                        <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition duration-500" />
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
 
               {/* CTA */}
-              <button
-                className="px-6 py-3 rounded-full font-medium text-black"
-                style={{ backgroundColor: active.color }}
-              >
-                {active.cta}
-              </button>
+              <div className="mt-16 flex justify-center lg:justify-start">
+                <Link to="/ContactPage">
+                  <button
+                    className="
+        px-8 py-4
+        rounded-full
+        text-black
+        font-outfit-medium
+        transition-transform duration-300
+        hover:scale-105
+        "
+                    style={{
+                      backgroundColor: active.color,
+                    }}
+                  >
+                    {active.cta}
+                  </button>
+                </Link>
+              </div>
 
-              {/* NAVIGATION */}
-              <div className="flex justify-between mt-20 text-white/70">
-                {active.prev && (
-                  <button onClick={() => nav(active.prev)}>
+              {/* NAV */}
+              <div className="flex justify-between items-center mt-20 font-outfit-regular text-white/70">
+                {active.prev ? (
+                  <button
+                    onClick={() => changeUniverse(active.prev)}
+                    className="hover:text-white transition"
+                  >
                     ← {get(active.prev)?.title}
                   </button>
+                ) : (
+                  <div />
                 )}
 
                 {active.next && (
-                  <button onClick={() => nav(active.next)}>
+                  <button
+                    onClick={() => changeUniverse(active.next)}
+                    className="hover:text-white transition"
+                  >
                     {get(active.next)?.title} →
                   </button>
                 )}
@@ -349,7 +385,16 @@ Explore un voyage immersif à travers les univers créatifs de Synnova : événe
               {/* BACK */}
               <button
                 onClick={close}
-                className="fixed top-4 left-4 bg-white/10 px-4 py-2 rounded-full"
+                className="
+    fixed top-4 left-4 z-50
+    bg-white/10
+    backdrop-blur-md
+    border border-white/10
+    px-5 py-2.5
+    rounded-full
+    hover:bg-white/20
+    transition
+    "
               >
                 Retour
               </button>
@@ -361,4 +406,4 @@ Explore un voyage immersif à travers les univers créatifs de Synnova : événe
   );
 }
 
-export default transition(UniversPage)
+export default transition(UniversPage);

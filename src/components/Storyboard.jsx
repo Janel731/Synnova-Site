@@ -6,6 +6,7 @@ import JV from '../assets/JV.webp';
 import UR from '../assets/UR.webp';
 import BBq from '../assets/BBq.webp';
 import prestation from '../assets/prestation.webm';
+import { motion } from 'framer-motion';
 gsap.registerPlugin(ScrollTrigger);
 
 const Storyboard = () => {
@@ -64,61 +65,10 @@ const Storyboard = () => {
       ease: 'power2.out'
     });
 
-    // Animation Blocs Storyboard (Style Tore Bentsen)
-    storyRefs.current.forEach((el, index) => {
-      const media = el.querySelector('.media-layer');
-      
-      // Point de transformation : coin supérieur gauche
-      gsap.set(media, {
-        transformOrigin: 'top left',
-        width: '320px',
-        height: '400px',
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        x: '-50%',
-        y: '-50%'
-      });
+  
 
-      // Timeline avec ScrollTrigger (scrub pour suivre le scroll)
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: el,
-          start: 'top bottom', // Commence quand le bloc entre en bas
-          end: 'bottom top',   // Finit quand le bloc sort en haut
-          scrub: 1,            // Suit le scroll fidèlement (1:1)
-          toggleActions: 'play none none none'
-        }
-      });
 
-      // Le média défile de droite à gauche en continu
-      // Il part de 100% à droite et sort à -100% à gauche
-      tl.fromTo(media,
-        { x: '100%', opacity: 0, scale: 0.9 },
-        { x: '-100%', opacity: 1, scale: 1, duration: 3, ease: 'none' }
-      );
-
-      // Animation d'opacité du texte (il reste fixe au centre)
-      const textBack = el.querySelector('.text-back');
-      const textFront = el.querySelector('.text-front');
-      
-      // Le texte apparaît au début du scroll
-      tl.fromTo([textBack, textFront],
-        { opacity: 0 },
-        { opacity: 1, duration: 0.5, ease: 'power1.out' },
-        '+=0'
-      );
-      
-      // Réglage des opacités finales
-      tl.set(textBack, { opacity: 0.15 }, '+=0');
-      tl.set(textFront, { opacity: 1 }, '+=0');
-
-      // Le texte disparaît à la fin du scroll
-      tl.to([textBack, textFront],
-        { opacity: 0, duration: 0.5 },
-        '+=2.5' // Après que le média soit sorti
-      );
-    });
+    
   }, []);
 
   return (
@@ -160,67 +110,134 @@ const Storyboard = () => {
         {/* PARTIE 2 : STORYBOARD - 4 BLOCS               */}
         {/* ============================================ */}
         <div className="space-y-48 md:space-y-64">
-          
-          {storyData.map((item, index) => (
-            <div 
-              key={item.id}
-              ref={el => storyRefs.current[index] = el}
-              className="relative min-h-[70vh] md:min-h-[80vh] flex items-center justify-center overflow-visible"
-            >
-              {/* Conteneur principal */}
-              <div className="relative w-full h-full flex items-center justify-center">
-                
-                {/* ZONE TEXTE (fixe au premier plan) */}
-                <div className="relative z-20 flex items-center justify-center w-full h-full">
-                  
-                  {/* TEXTE ARRIÈRE */}
-                  <div className="text-back absolute inset-0 flex items-center justify-center">
-                    <h1 className="text-5xl sm:text-[32px] md:text-[96px] lg:text-[120px] uppercase tracking-[0.15em] font-cormorant-bold-italic text-[rgba(249,168,37,0.9)]">
-                      {item.title}
-                    </h1>
-                  </div>
 
-                  {/* TEXTE AVANT (STROKE) */}
-                  <div className="text-front absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <h1
-                      className="text-5xl sm:text-5xl md:text-[96px] lg:text-[120px] uppercase tracking-[0.15em] font-cormorant-bold-italic text-transparent"
-                      style={{
-                        WebkitTextStroke: '2px rgba(249,168,37,0.1)'
-                      }}
-                    >
-                      {item.title}
-                    </h1>
-                  </div>
+  {storyData.map((item, index) => (
+    
+    <motion.div
+      key={item.id}
+      ref={(el) => (storyRefs.current[index] = el)}
+      initial={{
+        opacity: 0,
+        y: 100,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{
+        duration: 0.8,
+        ease: "easeOut",
+      }}
+      className="relative min-h-[70vh] md:min-h-[80vh] flex items-center overflow-hidden"
+    >
 
-                </div>
+      {/* CONTAINER */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
 
-                {/* MÉDIA (Image ou Vidéo) - En arrière-plan, défilement */}
-                <div className="media-layer absolute z-10 opacity-0">
-                  <div className="relative w-[320px] h-[400px] md:w-[420px] md:h-[520px] lg:w-[520px] lg:h-[640px] overflow-hidden rounded-2xl shadow-2xl">
-                    {item.type === 'video' ? (
-                      <video 
-                        src={item.media} 
-                        autoPlay 
-                        loop 
-                        muted 
-                        playsInline
-                        className="w-full h-full object-cover"
-                      />
-                    ) : (
-                      <img 
-                        src={item.media} 
-                        alt={item.title}
-                        className="w-full h-full object-cover mix-blend-overlay"
-                      />
-                    )}
-                  </div>
-                </div>
+        {/* MEDIA */}
+        <motion.div
+          initial={{
+            opacity: 0,
+            scale: 0.9,
+          }}
+          whileInView={{
+            opacity: 1,
+            scale: 1,
+          }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.8,
+            delay: 0.2,
+          }}
+          className="relative flex justify-center"
+        >
+          <div className="relative w-[320px] h-[400px] md:w-[420px] md:h-[520px] lg:w-[520px] lg:h-[640px] overflow-hidden rounded-2xl shadow-2xl">
 
-              </div>
-            </div>
-          ))}
+            {item.type === "video" ? (
+              <video
+                src={item.media}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <img
+                src={item.media}
+                alt={item.title}
+                className="w-full h-full object-cover"
+              />
+            )}
+
+            {/* OVERLAY */}
+            <div className="absolute inset-0 bg-black/20" />
+
+          </div>
+        </motion.div>
+
+        {/* TEXT */}
+        <div className="relative z-20 text-right px-6 md:px-0">
+
+          {/* TITLE BACK */}
+          <motion.h1
+            initial={{
+              opacity: 0,
+              x: 80,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.8,
+            }}
+            className="text-5xl sm:text-6xl md:text-[90px] lg:text-[120px]
+            uppercase tracking-[0.12em]
+            font-cormorant-bold-italic
+            text-[rgba(249,168,37,0.9)]
+            leading-none"
+          >
+            {item.title}
+          </motion.h1>
+
+          {/* STROKE */}
+          <motion.h1
+            initial={{
+              opacity: 0,
+              x: 100,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 1,
+              delay: 0.1,
+            }}
+            className="absolute top-0 right-0
+            text-5xl sm:text-6xl md:text-[90px] lg:text-[120px]
+            uppercase tracking-[0.12em]
+            font-cormorant-bold-italic
+            text-transparent leading-none"
+            style={{
+              WebkitTextStroke: "2px rgba(249,168,37,0.12)",
+            }}
+          >
+            {item.title}
+          </motion.h1>
 
         </div>
+
+      </div>
+    </motion.div>
+
+  ))}
+
+</div>
 
       </div>
     </section>

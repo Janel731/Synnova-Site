@@ -10,21 +10,21 @@ import { FlipWords } from "@/components/ui/flip-words"
 const features = [
     {
         title:"Formation — Journalisme & Communication",
-        description: "Formée en journalisme et en communication, j’ai construit mes bases autour de la parole, de l’écoute et de la transmission. Très tôt, j’ai compris que communiquer ne se limitait pas à parler, mais à créer du lien, à donner du sens et à porter des messages capables d’inspirer. Mon parcours à l’UCAE et dans des environnements culturels m’a permis de développer une aisance à l’oral, une sensibilité pour les médias et une passion pour la narration sous toutes ses formes.",
+        description: "Formée en journalisme et en communication, et  à l’UCAE  j’ai construit mes bases autour de la parole, de l’écoute et de la transmission. Très tôt, j’ai compris que communiquer ne se limitait pas à parler, mais à créer du lien, à donner du sens et à porter des messages capables d’inspirer. ",
         icon: "solar:book-bookmark-bold-duotone",
         image: formation,
         color: "from-blue-500 to-cyan-500"
     },
     {
         title: "Engagement social — Jeunesse & Société civile",
-        description: "Mon engagement social est né d’une volonté simple : être utile à ma communauté. À travers mon rôle au sein de U-Report Grand-Popo et mes différentes expériences dans la société civile, j’ai appris à écouter les réalités, à relayer les voix de la jeunesse et à participer à des actions de sensibilisation. Pour moi, informer, c’est déjà agir. Et chaque initiative dans laquelle je m’investis est une manière de contribuer, à mon échelle, à un changement positif et durable.",
+        description: "Mon engagement social est né d’une volonté simple : être utile à ma communauté. À travers mon rôle au sein de U-Report Grand-Popo et mes différentes expériences dans la société civile, j’ai appris à écouter les réalités, à relayer les voix de la jeunesse et à participer à des actions de sensibilisation. Pour moi, informer, c’est déjà agir.",
         icon: "solar:users-group-rounded-bold-duotone",
         image: engagement,
         color: "from-purple-500 to-pink-500"
     },
     {
         title: "Cinéma & Événements — Scène, caméra & émotions",
-        description: "Entre scène, caméra et coulisses, j’évolue dans un univers où chaque instant devient expression. En tant qu’animatrice live, actrice et régisseuse plateau, j’ai participé à des événements culturels et artistiques, notamment le Festival International des Arts du Bénin. Ces expériences m’ont appris à gérer l’énergie d’un public, à raconter des histoires par la présence et à transformer chaque événement en moment vivant, authentique et mémorable",
+        description: "Entre scène, caméra et coulisses, j’évolue dans un univers où chaque instant devient expression. En tant qu’animatrice live, actrice et régisseuse plateau, j’ai participé à des événements culturels et artistiques, notamment le Festival International des Arts du Bénin. Ces expériences m’ont appris à gérer l’énergie d’un public, à raconter des histoires par la présence et à transformer chaque événement en moment vivant, authentique et mémorable.",
         icon: "solar:clapperboard-bold-duotone",
         image: cinema,
         color: "from-amber-500 to-orange-500"
@@ -32,7 +32,7 @@ const features = [
 
      {
         title: "Entrepreneuriat éco — Créer avec conscience",
-        description: "À travers mon activité de création d’emballages biodégradables, j’ai choisi de mettre mon énergie au service d’un enjeu qui me tient à cœur : l’environnement. Cet engagement entrepreneurial est pour moi une continuité naturelle de mes valeurs. Je cherche à proposer des solutions concrètes, accessibles et responsables, tout en sensibilisant à une consommation plus respectueuse de notre planète. Créer, pour moi, c’est aussi protéger et penser au futur.",
+        description: "À travers mon activité de création d’emballages biodégradables, j’ai choisi de mettre mon énergie au service d’un enjeu qui me tient à cœur : l’environnement. Cet engagement entrepreneurial est pour moi une continuité naturelle de mes valeurs. Créer, pour moi, c’est aussi protéger et penser au futur.",
         icon: "solar:leaf-bold-duotone",
         image: entrepreneuriat,
         color: "from-lime-400 to-emerald-500"

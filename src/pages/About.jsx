@@ -6,6 +6,7 @@ import { NoiseCard } from "@/components/ui/noise-card";
 import { Icon } from "@iconify/react";
 import { MagneticText } from "@/components/ui/magnetic-text";
 import { GooeyButton } from "@/components/ui/gooey-button";
+import { BlurFade } from "@/components/ui/blur-fade";
 function About() {
   return (
     <>
@@ -83,76 +84,83 @@ Créatrice polyvalente entre événementiel, digital, cinéma et impact social. 
 
       <section className="flex justify-center bg-neutral-950 p-6 pb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <NoiseCard noiseOpacity={0.08} className="bg-[#1A237E]/5">
-            <span className="size-10 flex items-center justify-center rounded-full bg-rose/20">
-              {" "}
-              <Icon
-                fontSize={24}
-                className="text-rose"
-                icon="solar:palette-round-bold"
-              />{" "}
-            </span>
-            <h3 className="text-xl font-bold text-white font-outfit-bold">
-              Création
-            </h3>
-            <p className="text-muted-foreground text-[#F5F7FA] font-outfit-light text-[16px] ">
-              Imaginer, concevoir et donner vie à des idées qui inspirent et
-              marquent les esprits.
-            </p>
-          </NoiseCard>
+          <BlurFade delay={0.25} inView>
+            <NoiseCard noiseOpacity={0.08} className="bg-[#1A237E]/5">
+              <span className="size-10 flex items-center justify-center rounded-full bg-rose/20">
+                {" "}
+                <Icon
+                  fontSize={24}
+                  className="text-rose"
+                  icon="solar:palette-round-bold"
+                />{" "}
+              </span>
+              <h3 className="text-xl font-bold text-white font-outfit-bold">
+                Création
+              </h3>
+              <p className="text-muted-foreground text-[#F5F7FA] font-outfit-light text-[16px] ">
+                Imaginer, concevoir et donner vie à des idées qui inspirent et
+                marquent les esprits.
+              </p>
+            </NoiseCard>
+          </BlurFade>
+          <BlurFade delay={0.25} inView>
+            <NoiseCard noiseOpacity={0.08} className="bg-[#1A237E]/5">
+              <span className="size-10 flex items-center justify-center rounded-full bg-indigo/20">
+                {" "}
+                <Icon
+                  fontSize={24}
+                  className="text-indigo"
+                  icon="solar:heart-angle-bold"
+                />{" "}
+              </span>
+              <h3 className="text-xl font-bold text-white font-outfit-bold ">
+                Engagement
+              </h3>
+              <p className="text-muted-foreground text-[#F5F7FA] font-outfit-light text-[16px]">
+                S’impliquer avec passion pour transmettre des messages utiles et
+                contribuer positivement à la société.
+              </p>
+            </NoiseCard>
+          </BlurFade>
 
-          <NoiseCard noiseOpacity={0.08} className="bg-[#1A237E]/5">
-            <span className="size-10 flex items-center justify-center rounded-full bg-indigo/20">
-              {" "}
-              <Icon
-                fontSize={24}
-                className="text-indigo"
-                icon="solar:heart-angle-bold"
-              />{" "}
-            </span>
-            <h3 className="text-xl font-bold text-white font-outfit-bold ">
-              Engagement
-            </h3>
-            <p className="text-muted-foreground text-[#F5F7FA] font-outfit-light text-[16px]">
-              S’impliquer avec passion pour transmettre des messages utiles et
-              contribuer positivement à la société.
-            </p>
-          </NoiseCard>
+          <BlurFade delay={0.25} inView>
+            <NoiseCard noiseOpacity={0.08} className="bg-[#1A237E]/5">
+              <span className="size-10 flex items-center justify-center rounded-full bg-roseClair/20">
+                {" "}
+                <Icon
+                  fontSize={24}
+                  className="text-roseClair"
+                  icon="solar:star-shine-bold"
+                />{" "}
+              </span>
+              <h3 className="text-xl font-bold text-white font-outfit-bold">
+                Authenticité
+              </h3>
+              <p className="text-muted-foreground text-[#F5F7FA] font-outfit-light text-[16px]">
+                Exprimer une identité sincère, humaine et fidèle à ses valeurs
+                dans chaque projet.
+              </p>
+            </NoiseCard>
+          </BlurFade>
 
-          <NoiseCard noiseOpacity={0.08} className="bg-[#1A237E]/5">
-            <span className="size-10 flex items-center justify-center rounded-full bg-roseClair/20">
-              {" "}
-              <Icon
-                fontSize={24}
-                className="text-roseClair"
-                icon="solar:star-shine-bold"
-              />{" "}
-            </span>
-            <h3 className="text-xl font-bold text-white font-outfit-bold">
-              Authenticité
-            </h3>
-            <p className="text-muted-foreground text-[#F5F7FA] font-outfit-light text-[16px]">
-              Exprimer une identité sincère, humaine et fidèle à ses valeurs
-              dans chaque projet.
-            </p>
-          </NoiseCard>
-
-          <NoiseCard noiseOpacity={0.08} className="bg-[#1A237E]/5">
-            <span className="size-10 flex items-center justify-center rounded-full bg-or/20">
-              <Icon
-                fontSize={24}
-                className="text-or"
-                icon="solar:rocket-bold"
-              />{" "}
-            </span>
-            <h3 className="text-xl font-bold text-white font-outfit-bold">
-              Impact
-            </h3>
-            <p className="text-muted-foreground  text-[#F5F7FA]  font-outfit-light text-[16px]">
-              Créer des expériences et des actions capables de laisser une
-              empreinte durable et positive.
-            </p>
-          </NoiseCard>
+          <BlurFade delay={0.25} inView>
+            <NoiseCard noiseOpacity={0.08} className="bg-[#1A237E]/5">
+              <span className="size-10 flex items-center justify-center rounded-full bg-or/20">
+                <Icon
+                  fontSize={24}
+                  className="text-or"
+                  icon="solar:rocket-bold"
+                />{" "}
+              </span>
+              <h3 className="text-xl font-bold text-white font-outfit-bold">
+                Impact
+              </h3>
+              <p className="text-muted-foreground  text-[#F5F7FA]  font-outfit-light text-[16px]">
+                Créer des expériences et des actions capables de laisser une
+                empreinte durable et positive.
+              </p>
+            </NoiseCard>
+          </BlurFade>
         </div>
       </section>
 
