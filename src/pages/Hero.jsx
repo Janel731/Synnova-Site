@@ -20,6 +20,7 @@ function Hero() {
           Synnova Tocloe | Animatrice, Communicatrice & Actrice au Bénin
         </title>
 
+        <meta name="google-site-verification" content="8U0ueKq8HRPHyI6OwgwO6gvuF1XO1jr3joTmRjnhEWU" />
         <meta
           name="description"
           content="Découvrez Synnova Tocloe, animatrice, communicatrice, actrice et entrepreneuse sociale béninoise engagée entre Grand-Popo, le cinéma et la communication digitale."
@@ -54,7 +55,7 @@ function Hero() {
         />
         <meta name="twitter:image" content="/og/home.jpg" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href="https://ton-site.com/" />
+        <link rel="canonical" href="https://synnova-site.vercel.app/" />
       </Helmet>
 
       <section className="relative h-[100vh] hero overflow-hidden">

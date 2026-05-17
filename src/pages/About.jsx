@@ -48,7 +48,7 @@ Créatrice polyvalente entre événementiel, digital, cinéma et impact social. 
         />
         <meta property="og:type" content="profile" />
         <meta property="og:image" content="/assets/og-apropos.webp" />
-        <meta property="og:url" content="https://ton-site.com/a-propos" />
+        <meta property="og:url" content="https://synnova-site.vercel.app/about" />
 
         {/* ================= TWITTER CARD ================= */}
         <meta name="twitter:card" content="summary_large_image" />

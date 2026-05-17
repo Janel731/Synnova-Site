@@ -191,7 +191,7 @@ Explore un voyage immersif à travers les univers créatifs de Synnova : événe
   />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/assets/og-univers.webp" />
-  <meta property="og:url" content="https://ton-site.com/univers" />
+  <meta property="og:url" content="https://synnova-site.vercel.app/univers" />
 
   {/* ================= TWITTER ================= */}
   <meta name="twitter:card" content="summary_large_image" />
@@ -207,7 +207,7 @@ Explore un voyage immersif à travers les univers créatifs de Synnova : événe
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   {/* ================= CANONICAL ================= */}
-  <link rel="canonical" href="https://ton-site.com/univers" />
+  <link rel="canonical" href="https://synnova-site.vercel.app/univers" />
 </Helmet>
 
       <main className="min-h-screen bg-[#070A12] text-white overflow-hidden">

@@ -174,7 +174,7 @@ Explore les réalisations de Synnova : événements, cinéma, communication digi
   />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/assets/og-portfolio.webp" />
-  <meta property="og:url" content="https://ton-site.com/portfolio" />
+  <meta property="og:url" content="https://synnova-site.vercel.app/PortfolioPage" />
 
   {/* ================= TWITTER ================= */}
   <meta name="twitter:card" content="summary_large_image" />
@@ -190,7 +190,7 @@ Explore les réalisations de Synnova : événements, cinéma, communication digi
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   {/* ================= CANONICAL ================= */}
-  <link rel="canonical" href="https://ton-site.com/portfolio" />
+  <link rel="canonical" href="https://synnova-site.vercel.app/PortfolioPage" />
 </Helmet>
 
     <main className="bg-[#070A12] text-white min-h-screen">

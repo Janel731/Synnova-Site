@@ -48,7 +48,7 @@ Travaillons ensemble sur des projets créatifs : événements, cinéma, communic
   />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/assets/og-contact.webp" />
-  <meta property="og:url" content="https://ton-site.com/contact" />
+  <meta property="og:url" content="https://synnova-site.vercel.app/ContactPage" />
 
   {/* ================= TWITTER ================= */}
   <meta name="twitter:card" content="summary_large_image" />
@@ -64,7 +64,7 @@ Travaillons ensemble sur des projets créatifs : événements, cinéma, communic
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   {/* ================= CANONICAL ================= */}
-  <link rel="canonical" href="https://ton-site.com/contact" />
+  <link rel="canonical" href="https://synnova-site.vercel.app/ContactPage" />
 </Helmet>
   );
 }
