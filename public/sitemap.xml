@@ -27,7 +27,7 @@
 
   <!-- ================= PORTFOLIO ================= -->
   <url>
-    <loc>https://ton-site.com/portfolio</loc>
+    <loc>https://ton-site.com/PortfolioPage</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -35,7 +35,7 @@
 
   <!-- ================= CONTACT ================= -->
   <url>
-    <loc>https://ton-site.com/contact</loc>
+    <loc>https://ton-site.com/ContactPage</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
