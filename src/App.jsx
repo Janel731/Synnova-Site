@@ -9,11 +9,14 @@ import Univers from "./pages/UniversPage";
 import PortfolioPage from "./pages/PortfolioPage";
 import ContactPage from "./pages/ContactPage";
 import ScrollToTop from "./components/ScrollToTop";
+import { AfriChatBootstrap } from "@/AfriChatBootstrap";
 function App() {
   const location = useLocation();
 
   return (
     <>
+
+    <AfriChatBootstrap></AfriChatBootstrap>
       <header>
         <Navbar />
       </header>

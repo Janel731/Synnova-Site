@@ -12,6 +12,7 @@ import transition from "../transition";
 import { LetterPullButton } from "@/components/ui/letter-pull-button";
 import { Link } from "react-router-dom";
 
+
 function Hero() {
   return (
     <>
@@ -60,6 +61,8 @@ function Hero() {
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href="https://synnova-site.vercel.app/" />
       </Helmet>
+
+      
 
       <section className="relative h-[100vh] hero overflow-hidden">
         {/* Fond Indigo Nuit + Grille */}
