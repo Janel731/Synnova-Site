@@ -16,7 +16,7 @@ function App() {
   return (
     <>
 
-    <AfriChatBootstrap></AfriChatBootstrap>
+    {/* <AfriChatBootstrap></AfriChatBootstrap> */}
       <header>
         <Navbar />
       </header>
