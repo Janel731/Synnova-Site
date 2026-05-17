@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import SynnovaPhoto from "../assets/Synnova.webp";
 
 import { Star, Newspaper, Mic, Film, Share2 } from "lucide-react";
-import Vision from "../components/vision";
+import Vision from "../components/Vision";
 import Storyboard from "../components/Storyboard";
 import HorizontalGallery from "../components/HorizontalGallery";
 import FloatingSocials from "../components/FloatingSocials";
